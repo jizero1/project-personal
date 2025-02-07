@@ -10,6 +10,7 @@ function App() {
         <nav>
           <ul>
             <li><Link to="/">Main</Link></li>
+            <li><Link to="/">About</Link></li>
           </ul>
         </nav>
         <Routes>
