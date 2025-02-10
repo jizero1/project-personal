@@ -10,16 +10,24 @@ const Main = () => {
         navigate('/Personal');
     }
     return (
-        <div className="main">
-            <div className="main-test-container">
+        <div className="main common-flex">
+            <div className="main-test-container common-flex">
                 <p className="main-test-text">What's your Personal Color?</p>
                 <button className="main-test-Btn" onClick={mainTestBtnClick}>Personal Test</button>
             </div>
             <div className="main-circle-container">
-                <div className="main-circle main-circle-leftup"></div>
-                <div className="main-circle main-circle-leftdown"></div>
-                <div className="main-circle main-circle-rightup"></div>
-                <div className="main-circle main-circle-rightdown"></div>
+                <div className="main-circle main-circle-leftup common-flex">
+                    <p className="main-circle-text">봄</p>
+                </div>
+                <div className="main-circle main-circle-leftdown common-flex">
+                    <p className="main-circle-text">가을</p>
+                </div>
+                <div className="main-circle main-circle-rightup common-flex">
+                    <p className="main-circle-text">여름</p>
+                </div>
+                <div className="main-circle main-circle-rightdown common-flex">
+                    <p className="main-circle-text">겨울</p>
+                </div>
             </div>
         </div>
     )

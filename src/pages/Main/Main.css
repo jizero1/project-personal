@@ -1,19 +1,22 @@
-.main {
-    width: 100%;
-    height: 100%;
-    background-color: lightgrey;
+/* -------- 공통으로 사용되는 속성 -------- */
+.common-flex {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+/* --------------------------------------- */
+
+.main {
+    width: 100%;
+    height: 100%;
     flex-direction: row;
+    /* common-flex속성 적용 */
 }
 .main-test-container {
     width: 800px;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
     flex-direction: column;
-    /* background-color: white; */
+    background-color: grey;
+    /* common-flex속성 적용 */
 }
 .main-test-text{
     font-size: 50px;
@@ -24,17 +27,12 @@
     font-size: 20px;
 }
 .main-circle-container {
-    width: 450px;
-    height: 450px;
-    background-color: white;
+    width: 400px;
+    height: 400px;
+    /* background-color: gold; */
     position: relative;
-    animation: circleRotateAni 6s infinite;
-    transition: transform 0.3s ease;
+    animation: circleRotateAni 8s linear infinite;
 }
-/* .main-circle-container:hover {
-    animation: none;
-    transform: rotate(0deg);ro
-} */
 @keyframes circleRotateAni {
     0% {
         transform: rotate(0deg);
@@ -43,10 +41,53 @@
         transform: rotate(360deg);
     }
 }
+.main-circle-container:hover {
+    animation-play-state: paused;
+    animation: none;
+    /* animation: circleRotateStopAni2 5s; */
+}
+.main-circle-container:hover .main-circle{
+    animation: circleRotateStopAni 2s forwards;
+    opacity: 1;
+    visibility: visible;
+}
+.main-circle-container:hover .main-circle-text {
+    animation: circleRotateTextAni 2s forwards;
+    animation-delay: 1.5s;
+}
+@keyframes circleRotateTextAni {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+ @keyframes circleRotateStopAni {
+    0% {
+        width: 250px;
+        height: 250px;
+        animation-timing-function:ease-in;
+    }
+    50% {
+        width: 400px;
+        height: 400px;
+        animation-timing-function:linear;
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        animation-timing-function:ease-out;
+        cursor: pointer;
+    }
+}
+
+.main-circle-text {
+    opacity: 0;
+}
 .main-circle {
-    width: 280px;
-    height: 280px;
-    /* background-color: pink; */
+    width: 250px;
+    height: 250px;
     border-radius: 100%;   
     position: absolute;
     mix-blend-mode: multiply; /*겹치는 부분 색상 혼합*/
@@ -54,20 +95,29 @@
 .main-circle-leftup {
     left: 0;
     top: 0;
-    background-color: pink;
+    /* 봄 */
+    background-color: #fff8bd;
+    /* common-flex속성 적용 */
 }
 .main-circle-leftdown {
     left: 0;
     bottom: 0;
-    background-color: brown;
+    /* 가을 */
+    background-color: #E2725B;
+    /* common-flex속성 적용 */
 }
 .main-circle-rightup {
     right: 0;
     top: 0;
-    background-color: lightblue;
+    /* 여름 */
+    background-color: #dbfefe;
+    /* common-flex속성 적용 */
 }
 .main-circle-rightdown {
     right: 0;
     bottom: 0;
-    background-color: lightgrey;
+    /* 겨울 */
+    background-color: #B0C4DE;
+    /* common-flex속성 적용 */
 }
+
