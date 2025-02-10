@@ -13,75 +13,46 @@
     /* common-flex속성 적용 */
 }
 .main-test-container {
-    width: 800px;
+    width: 60%;
     flex-direction: column;
-    background-color: grey;
     /* common-flex속성 적용 */
 }
 .main-test-text{
     font-size: 50px;
+    margin-bottom: 35px;
 }
 .main-test-Btn {
     width: 200px;
     height: 50px;
-    font-size: 20px;
+    font-size: 23px;
+    font-weight: 500;
+    background-color: rgb(246, 246, 246);
+    border-radius: 15px;
+    border-style: none;
+    box-shadow: 0.1px 0.1px 8px 0.1px rgb(176, 176, 176);
 }
-.main-circle-container {
+.main-circle-outContainer {
+    width: 40%;
+}
+.main-circle-innerContainer {
     width: 400px;
     height: 400px;
-    /* background-color: gold; */
     position: relative;
     animation: circleRotateAni 8s linear infinite;
 }
-@keyframes circleRotateAni {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-.main-circle-container:hover {
+.main-circle-innerContainer:hover {
     animation-play-state: paused;
     animation: none;
-    /* animation: circleRotateStopAni2 5s; */
 }
-.main-circle-container:hover .main-circle{
+.main-circle-innerContainer:hover .main-circle{
     animation: circleRotateStopAni 2s forwards;
     opacity: 1;
     visibility: visible;
 }
-.main-circle-container:hover .main-circle-text {
+.main-circle-innerContainer:hover .main-circle-text {
     animation: circleRotateTextAni 2s forwards;
     animation-delay: 1.5s;
 }
-@keyframes circleRotateTextAni {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
- @keyframes circleRotateStopAni {
-    0% {
-        width: 250px;
-        height: 250px;
-        animation-timing-function:ease-in;
-    }
-    50% {
-        width: 400px;
-        height: 400px;
-        animation-timing-function:linear;
-    }
-    100% {
-        width: 200px;
-        height: 200px;
-        animation-timing-function:ease-out;
-        cursor: pointer;
-    }
-}
-
 .main-circle-text {
     opacity: 0;
 }
@@ -121,3 +92,37 @@
     /* common-flex속성 적용 */
 }
 
+@keyframes circleRotateAni {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes circleRotateTextAni {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+ @keyframes circleRotateStopAni {
+    0% {
+        width: 250px;
+        height: 250px;
+        animation-timing-function:ease-in;
+    }
+    50% {
+        width: 400px;
+        height: 400px;
+        animation-timing-function:linear;
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        animation-timing-function:ease-out;
+        cursor: pointer;
+    }
+}
