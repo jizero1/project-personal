@@ -6,123 +6,49 @@
 }
 /* --------------------------------------- */
 
-.main {
-    width: 100%;
-    height: 100%;
+.mainTop {
+    width: 100vw;
+    height: 100vh;
     flex-direction: row;
-    /* common-flex속성 적용 */
+    background-image: radial-gradient(circle, #ff7e5f, #c0b7f5);  /* 원형 그라디언트 */
 }
+/* .mainBoxAni {
+    width: 50px;
+    height: 30px;
+    background-color: white;
+} */
 .main-test-container {
     width: 60%;
     flex-direction: column;
+    /* background-color: rgb(91, 91, 91); */
+    padding: 20px;
     /* common-flex속성 적용 */
 }
 .main-test-text{
-    font-size: 50px;
-    margin-bottom: 35px;
+    font-size: 60px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 30px;
 }
+
 .main-test-Btn {
     width: 200px;
     height: 50px;
+    cursor: pointer;
     font-size: 23px;
-    font-weight: 500;
-    background-color: rgb(246, 246, 246);
+    font-weight: 600;
+    /* background-color: rgb(246, 246, 246); */
+    background-color: white;
     border-radius: 15px;
     border-style: none;
     box-shadow: 0.1px 0.1px 8px 0.1px rgb(176, 176, 176);
 }
-.main-circle-outContainer {
-    width: 40%;
-}
-.main-circle-innerContainer {
-    width: 400px;
-    height: 400px;
-    position: relative;
-    animation: circleRotateAni 8s linear infinite;
-}
-.main-circle-innerContainer:hover {
-    animation-play-state: paused;
-    animation: none;
-}
-.main-circle-innerContainer:hover .main-circle{
-    animation: circleRotateStopAni 2s forwards;
-    opacity: 1;
-    visibility: visible;
-}
-.main-circle-innerContainer:hover .main-circle-text {
-    animation: circleRotateTextAni 2s forwards;
-    animation-delay: 1.5s;
-}
-.main-circle-text {
-    opacity: 0;
-}
-.main-circle {
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;   
-    position: absolute;
-    mix-blend-mode: multiply; /*겹치는 부분 색상 혼합*/
-}
-.main-circle-leftup {
-    left: 0;
-    top: 0;
-    /* 봄 */
-    background-color: #fff8bd;
-    /* common-flex속성 적용 */
-}
-.main-circle-leftdown {
-    left: 0;
-    bottom: 0;
-    /* 가을 */
-    background-color: #E2725B;
-    /* common-flex속성 적용 */
-}
-.main-circle-rightup {
-    right: 0;
-    top: 0;
-    /* 여름 */
-    background-color: #dbfefe;
-    /* common-flex속성 적용 */
-}
-.main-circle-rightdown {
-    right: 0;
-    bottom: 0;
-    /* 겨울 */
-    background-color: #B0C4DE;
-    /* common-flex속성 적용 */
-}
 
-@keyframes circleRotateAni {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-@keyframes circleRotateTextAni {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
- @keyframes circleRotateStopAni {
-    0% {
-        width: 250px;
-        height: 250px;
-        animation-timing-function:ease-in;
-    }
-    50% {
-        width: 400px;
-        height: 400px;
-        animation-timing-function:linear;
-    }
-    100% {
-        width: 200px;
-        height: 200px;
-        animation-timing-function:ease-out;
-        cursor: pointer;
-    }
+
+
+
+
+.mainBottom {
+    width: 100vw;
+    height: 600px; 
 }
