@@ -4,32 +4,38 @@
     justify-content: center;
     align-items: center;
 }
+
 /* --------------------------------------- */
 
 .mainPage {
     width: 100vw;
     height: 100vh;
     flex-direction: column;
-    background-image: radial-gradient(circle, #ff7e5f, #c0b7f5);  /* 원형 그라디언트 */
+    background-image: radial-gradient(circle, #ff7e5f, #c0b7f5);
+    /* 원형 그라디언트 */
 }
+
 .main-test-container {
     width: 60%;
     flex-direction: column;
     padding: 20px;
     /* common-flex속성 적용 */
 }
-.main-test-text{
+
+.main-test-text {
     font-size: 60px;
     font-weight: 700;
     color: white;
     margin-bottom: 30px;
 }
+
 .main-test-text2 {
     font-family: "Noto Sans KR", serif;
     font-size: 18px;
     color: white;
     margin-bottom: 60px;
 }
+
 .main-test-Btn {
     width: 200px;
     height: 50px;
@@ -49,34 +55,115 @@
     /* common-flex 속성 적용 */
     flex-direction: column;
 }
+
 .mainSecond-text-box {
     width: 100%;
     /* background-color: blue; */
     padding-left: 80px;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
 
 }
+
 .mainSecond-text {
     font-size: 40px;
     font-weight: 600;
     color: white;
 }
+
 .mainSecond-box {
-    width: 280px;
+    width: 300px;
     height: 300px;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin-left: 20px;
-    margin-right: 20px;
-    position: relative; /* 부모 요소에 position을 설정해줍니다. */
-    z-index: 1;
+    background-color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* border-radius: 100%; */
 }
 
-.mainSecond-box-inner {
-    width: 90%;
-    height: 90%;
-    position: absolute; /* 부모에 상대적인 위치로 절대 위치를 설정 */
+.mainSecond-box-circle {
+    width: 200px;
+    height: 200px;
     background-color: white;
+    border-radius: 100%;
+    position: relative;
+    /* transform: rotate(100deg) */
 
+}
+
+.mainSecond-box-circle:hover {
+    animation: circleAni 2s;
+}
+
+.mainSecond-box-circle:hover .mainSecond-box-circle-small {
+    opacity: 1;
+    transition: all 2s;
+}
+
+@keyframes circleAni {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.mainSecond-box-circle-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    /* background-color: purple; */
+    position: absolute;
+    opacity: 0;
+}
+
+.spring:nth-child(1) {
+    bottom: 93%;
+    left: 37%;
+    background-color: purple;
+}
+
+.spring:nth-child(2) {
+    bottom: 60%;
+    right: 89%;
+    background-color: lightblue;
+}
+
+.spring:nth-child(3) {
+    bottom: 60%;
+    left: 89%;
+    background-color: pink;
+    /* transform: translateY(-50%) translateX(-100%); */
+}
+
+.spring:nth-child(4) {
+    top: 66%;
+    right: 86%;
+    background-color: yellow;
+    /* transform: translateY(-50%); */
+}
+
+.spring:nth-child(5) {
+    top: 93%;
+    left: 37%;
+    background-color: grey
+        /* transform: translateY(-50%) translateX(-100%); */
+}
+
+.spring:nth-child(6) {
+    background-color: green;
+    top: 66%;
+    left: 86%;
+}
+
+
+
+.mainSecond-box-text {
+    /* position: absolute;
+    z-index: 10; */
+    width: 20px;
+    height: 20px;
+    background-color: brown;
 }
 
 /* 반응형  */
@@ -85,14 +172,14 @@
         width: 85%;
         text-align: center;
     }
+
     .main-test-text {
         font-size: 45px;
     }
+
     .main-test-Btn {
         width: 180px;
         height: 45px;
         font-size: 20px;
     }
 }
-
-

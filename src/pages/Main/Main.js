@@ -60,11 +60,17 @@ const MainSecondPage = () => {
                     className="mainSecond-box common-flex"
                 >
 
-                    <div className="mainSecond-box-inner">
+                    <p className="mainSecond-box-text">봄</p>
+                    <div className="mainSecond-box-circle">
 
-                        <div><button>go</button></div>
-                        <p>Spring</p>
+                        <div className="spring mainSecond-box-circle-small"></div>
+                        <div className="spring mainSecond-box-circle-small"></div>
+                        <div className="spring mainSecond-box-circle-small"></div>
+                        <div className="spring mainSecond-box-circle-small"></div>
+                        <div className="spring mainSecond-box-circle-small"></div>
+                        <div className="spring mainSecond-box-circle-small"></div>
                     </div>
+
                 </motion.div>
 
                 <motion.div
