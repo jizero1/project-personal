@@ -4,6 +4,7 @@ import './App.css';
 import Main from './pages/Main/Main';
 import About from './pages/About/About';
 import Personal from './pages/Personal/Personal';
+import { motion } from "framer-motion";
 
 function App() {
 
@@ -14,12 +15,7 @@ function App() {
           <ul>
             <li className="navbar-main">
               <Link to="/">
-                <div className="navbar-main-circle">
-                  <div className="common-circle navbar-main-circle-leftTop"></div>
-                  <div className="common-circle navbar-main-circle-leftBottom"></div>
-                  <div className="common-circle navbar-main-circle-rightTop"></div>
-                  <div className="common-circle navbar-main-circle-rightBottom"></div>
-                </div>
+                <p className="navbar-main-logoText"><span className="navbar-main-logoText-span">P</span>ersonal</p>
               </Link></li>
             <li className="navbar-about"><Link to="/About">About</Link></li>
             <li className="navbar-personal"><Link to="/Personal">Personal Test</Link></li>

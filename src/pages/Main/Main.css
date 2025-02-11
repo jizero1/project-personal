@@ -6,21 +6,15 @@
 }
 /* --------------------------------------- */
 
-.mainTop {
+.mainPage {
     width: 100vw;
     height: 100vh;
-    flex-direction: row;
+    flex-direction: column;
     background-image: radial-gradient(circle, #ff7e5f, #c0b7f5);  /* 원형 그라디언트 */
 }
-/* .mainBoxAni {
-    width: 50px;
-    height: 30px;
-    background-color: white;
-} */
 .main-test-container {
     width: 60%;
     flex-direction: column;
-    /* background-color: rgb(91, 91, 91); */
     padding: 20px;
     /* common-flex속성 적용 */
 }
@@ -30,25 +24,75 @@
     color: white;
     margin-bottom: 30px;
 }
-
+.main-test-text2 {
+    font-family: "Noto Sans KR", serif;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 60px;
+}
 .main-test-Btn {
     width: 200px;
     height: 50px;
     cursor: pointer;
     font-size: 23px;
     font-weight: 600;
-    /* background-color: rgb(246, 246, 246); */
     background-color: white;
-    border-radius: 15px;
+    border-radius: 30px;
     border-style: none;
-    box-shadow: 0.1px 0.1px 8px 0.1px rgb(176, 176, 176);
+    color: rgb(242, 152, 122);
 }
 
-
-
-
-
-.mainBottom {
+.mainSecond {
     width: 100vw;
-    height: 600px; 
+    height: 600px;
+    background-color: #c0b7f5;
+    /* common-flex 속성 적용 */
+    flex-direction: column;
 }
+.mainSecond-text-box {
+    width: 100%;
+    /* background-color: blue; */
+    padding-left: 80px;
+    margin-bottom: 60px;
+
+}
+.mainSecond-text {
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+.mainSecond-box {
+    width: 280px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative; /* 부모 요소에 position을 설정해줍니다. */
+    z-index: 1;
+}
+
+.mainSecond-box-inner {
+    width: 90%;
+    height: 90%;
+    position: absolute; /* 부모에 상대적인 위치로 절대 위치를 설정 */
+    background-color: white;
+
+}
+
+/* 반응형  */
+@media screen and (max-width: 768px) {
+    .main-test-container {
+        width: 85%;
+        text-align: center;
+    }
+    .main-test-text {
+        font-size: 45px;
+    }
+    .main-test-Btn {
+        width: 180px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+
