@@ -51,56 +51,86 @@ const MainSecondPage = () => {
                 <p className="mainSecond-text">Personal Color</p>
                 <p>계절별로 나뉘는 퍼스널 컬러를 확인 해보세요.</p>
             </div>
-            <div className="common-flex">
+            <div className="mainSecond-box-container common-flex">
                 <motion.div
                     ref={divRef}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
                     transition={{ duration: 1 }}
                     className="mainSecond-box common-flex"
                 >
+                    <div className="spring mainSecond-box-small"></div>
+                    <div className="spring mainSecond-box-small"></div>
+                    <div className="spring mainSecond-box-small"></div>
+                    <div className="spring mainSecond-box-small"></div>
+                    <div className="spring mainSecond-box-small"></div>
+                    <div className="spring mainSecond-box-small"></div>
 
-                    <p className="mainSecond-box-text">봄</p>
                     <div className="mainSecond-box-circle">
 
-                        <div className="spring mainSecond-box-circle-small"></div>
-                        <div className="spring mainSecond-box-circle-small"></div>
-                        <div className="spring mainSecond-box-circle-small"></div>
-                        <div className="spring mainSecond-box-circle-small"></div>
-                        <div className="spring mainSecond-box-circle-small"></div>
-                        <div className="spring mainSecond-box-circle-small"></div>
+                        <p>Spring</p>
                     </div>
 
                 </motion.div>
 
                 <motion.div
                     ref={divRef}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
                     transition={{ duration: 1, delay: 0.5 }}
                     className="mainSecond-box common-flex"
                 >
-                    <p>Summer</p>
+                    <div className="summer mainSecond-box-small"></div>
+                    <div className="summer mainSecond-box-small"></div>
+                    <div className="summer mainSecond-box-small"></div>
+                    <div className="summer mainSecond-box-small"></div>
+                    <div className="summer mainSecond-box-small"></div>
+                    <div className="summer mainSecond-box-small"></div>
+
+                    <div className="mainSecond-box-circle">
+
+                        <p>summer</p>
+                    </div>
                 </motion.div>
 
                 <motion.div
                     ref={divRef}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
                     transition={{ duration: 1, delay: 1 }}
                     className="mainSecond-box common-flex"
                 >
-                    <p>Fall</p>
+                    <div className="fall mainSecond-box-small"></div>
+                    <div className="fall mainSecond-box-small"></div>
+                    <div className="fall mainSecond-box-small"></div>
+                    <div className="fall mainSecond-box-small"></div>
+                    <div className="fall mainSecond-box-small"></div>
+                    <div className="fall mainSecond-box-small"></div>
+
+                    <div className="mainSecond-box-circle">
+
+                        <p>fall</p>
+                    </div>
                 </motion.div>
 
                 <motion.div
                     ref={divRef}
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
                     transition={{ duration: 1, delay: 1.5 }}
                     className="mainSecond-box common-flex"
                 >
-                    <p>Winter</p>
+                    <div className="winter mainSecond-box-small"></div>
+                    <div className="winter mainSecond-box-small"></div>
+                    <div className="winter mainSecond-box-small"></div>
+                    <div className="winter mainSecond-box-small"></div>
+                    <div className="winter mainSecond-box-small"></div>
+                    <div className="winter mainSecond-box-small"></div>
+
+                    <div className="mainSecond-box-circle">
+
+                        <p>Winter</p>
+                    </div>
                 </motion.div>
             </div>
         </div>

@@ -55,7 +55,11 @@
     /* common-flex 속성 적용 */
     flex-direction: column;
 }
-
+.mainSecond-box-container {
+    width: 100vw;
+    background-color: lightgrey;
+    
+}
 .mainSecond-text-box {
     width: 100%;
     /* background-color: blue; */
@@ -71,33 +75,40 @@
 }
 
 .mainSecond-box {
-    width: 300px;
-    height: 300px;
-    background-color: blue;
+    width: 320px;
+    height: 320px;
+    /* background-color: blue; */
     margin-left: 10px;
     margin-right: 10px;
-    /* border-radius: 100%; */
-}
-
-.mainSecond-box-circle {
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    border-radius: 100%;
     position: relative;
-    /* transform: rotate(100deg) */
-
+    
 }
 
-.mainSecond-box-circle:hover {
+.mainSecond-box:hover {
     animation: circleAni 2s;
+    
+}
+.mainSecond-box:not(:hover) {
+    animation: circleNotAni 2s;
 }
 
-.mainSecond-box-circle:hover .mainSecond-box-circle-small {
+.mainSecond-box:hover .mainSecond-box-small {
     opacity: 1;
     transition: all 2s;
 }
+.mainSecond-box:not(:hover) .mainSecond-box-small {
+    opacity: 0;
+    transition: all 1s;
+}
 
+@keyframes circleNotAni {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
 @keyframes circleAni {
     0% {
         transform: rotate(0deg);
@@ -108,7 +119,7 @@
     }
 }
 
-.mainSecond-box-circle-small {
+.mainSecond-box-small {
     width: 50px;
     height: 50px;
     border-radius: 100%;
@@ -117,54 +128,102 @@
     opacity: 0;
 }
 
-.spring:nth-child(1) {
-    bottom: 93%;
-    left: 37%;
-    background-color: purple;
+.mainSecond-box-small:nth-child(1) {
+    /* bottom: 93%; */
+    /* left: 37%; */
+    top: 0%;
+
 }
 
-.spring:nth-child(2) {
-    bottom: 60%;
-    right: 89%;
-    background-color: lightblue;
+.mainSecond-box-small:nth-child(2) {
+    /* bottom: 60%; */
+    /* right: 89%; */
+    left: 3%;
+    top: 25%;
 }
 
-.spring:nth-child(3) {
-    bottom: 60%;
-    left: 89%;
-    background-color: pink;
-    /* transform: translateY(-50%) translateX(-100%); */
+.mainSecond-box-small:nth-child(3) {
+    /* bottom: 60%;
+    left: 89%; */
+    right: 3%;
+    top: 25%;
 }
 
-.spring:nth-child(4) {
-    top: 66%;
-    right: 86%;
-    background-color: yellow;
-    /* transform: translateY(-50%); */
+.mainSecond-box-small:nth-child(4) {
+    /* top: 66%;
+    right: 86%; */
+    left: 6%;
+    bottom: 18%;
 }
 
-.spring:nth-child(5) {
-    top: 93%;
-    left: 37%;
-    background-color: grey
-        /* transform: translateY(-50%) translateX(-100%); */
+.mainSecond-box-small:nth-child(5) {
+    bottom: 0%;
 }
 
-.spring:nth-child(6) {
-    background-color: green;
-    top: 66%;
-    left: 86%;
+.mainSecond-box-small:nth-child(6) {
+    right: 6%;
+    bottom: 18%;
+}
+
+.spring:nth-child(1) { background-color: purple; }
+.spring:nth-child(2) { background-color: lightblue; }
+.spring:nth-child(3) { background-color: pink; }
+.spring:nth-child(4) { background-color: yellow;}
+.spring:nth-child(5) { background-color: grey; }
+.spring:nth-child(6) { background-color: green;}
+
+.summer:nth-child(1) { background-color: purple; }
+.summer:nth-child(2) { background-color: lightblue; }
+.summer:nth-child(3) { background-color: pink; }
+.summer:nth-child(4) { background-color: yellow;}
+.summer:nth-child(5) { background-color: grey; }
+.summer:nth-child(6) { background-color: green;}
+
+.fall:nth-child(1) { background-color: purple; }
+.fall:nth-child(2) { background-color: lightblue; }
+.fall:nth-child(3) { background-color: pink; }
+.fall:nth-child(4) { background-color: yellow;}
+.fall:nth-child(5) { background-color: grey; }
+.fall:nth-child(6) { background-color: green;}
+
+.winter:nth-child(1) { background-color: purple; }
+.winter:nth-child(2) { background-color: lightblue; }
+.winter:nth-child(3) { background-color: pink; }
+.winter:nth-child(4) { background-color: yellow;}
+.winter:nth-child(5) { background-color: grey; }
+.winter:nth-child(6) { background-color: green;}
+
+.mainSecond-box-circle {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: fixed; */
+    /* position: absolute; */
+/* transform: unset; */
+transform: none;
+
 }
 
 
+  
 
-.mainSecond-box-text {
-    /* position: absolute;
-    z-index: 10; */
-    width: 20px;
-    height: 20px;
-    background-color: brown;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 반응형  */
 @media screen and (max-width: 768px) {
