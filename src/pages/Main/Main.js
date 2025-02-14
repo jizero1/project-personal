@@ -49,7 +49,7 @@ const MainSecondPage = () => {
         <div className="mainSecond common-flex">
             <div className="mainSecond-text-box">
                 <p className="mainSecond-text">Personal Color</p>
-                <p>계절별로 나뉘는 퍼스널 컬러를 확인 해보세요.</p>
+                <p className="mainSecond-text-explain">계절별로 나뉘는 퍼스널 컬러를 확인 해보세요!</p>
             </div>
             <div className="mainSecond-box-container common-flex">
                 <motion.div
@@ -67,8 +67,8 @@ const MainSecondPage = () => {
                     <div className="spring mainSecond-box-small"></div>
 
                     <div className="mainSecond-box-circle">
-
-                        <p>Spring</p>
+                        <img src="../img/spring.jpg"></img>
+                        {/* <p>Spring</p> */}
                     </div>
 
                 </motion.div>
@@ -88,8 +88,8 @@ const MainSecondPage = () => {
                     <div className="summer mainSecond-box-small"></div>
 
                     <div className="mainSecond-box-circle">
-
-                        <p>summer</p>
+                    <img src="../img/summer.jpg"></img>
+                        {/* <p>summer</p> */}
                     </div>
                 </motion.div>
 
@@ -108,8 +108,8 @@ const MainSecondPage = () => {
                     <div className="fall mainSecond-box-small"></div>
 
                     <div className="mainSecond-box-circle">
-
-                        <p>fall</p>
+                    <img src="../img/fall.jpg"></img>
+                        {/* <p>fall</p> */}
                     </div>
                 </motion.div>
 
@@ -128,8 +128,8 @@ const MainSecondPage = () => {
                     <div className="winter mainSecond-box-small"></div>
 
                     <div className="mainSecond-box-circle">
-
-                        <p>Winter</p>
+                    <img src="../img/winter.jpg"></img>
+                        {/* <p>Winter</p> */}
                     </div>
                 </motion.div>
             </div>
