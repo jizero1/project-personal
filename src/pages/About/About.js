@@ -4,6 +4,7 @@ import './About.css';
 import { FaDotCircle, FaTags, FaAdjust, FaBuffer, FaBook } from "react-icons/fa";
 
 const About = () => {
+    
     return (
         <div className="about">
             <div className="about-title">
@@ -23,6 +24,34 @@ const About = () => {
                     </div>
                     <p className="about-text-p-subject">퍼스널컬러의 종류</p>
                     <p className="about-text-p-explan">봄 웜톤, 여름 쿨톤, 가을 웜톤, 겨울 쿨톤으로 크게 나뉘며, 각각의 톤은 더 세분화된 특징을 가집니다. 각 유형별로 어울리는 색상과 스타일링 방법이 다릅니다.</p>
+                    <div className="about-color-Container">
+                        <p className="about-color-text">봄 웜톤</p>
+                        <div className="color spring-color-1"></div>
+                        <div className="color spring-color-2"></div>
+                        <div className="color spring-color-3"></div>
+                        <div className="color spring-color-4"></div>
+                    </div>
+                    <div className="about-color-Container">
+                        <p className="about-color-text">여름 쿨톤</p>
+                        <div className="color summer-color-1"></div>
+                        <div className="color summer-color-2"></div>
+                        <div className="color summer-color-3"></div>
+                        <div className="color summer-color-4"></div>
+                    </div>
+                    <div className="about-color-Container">
+                        <p className="about-color-text">가을 웜톤</p>
+                        <div className="color fall-color-1"></div>
+                        <div className="color fall-color-2"></div>
+                        <div className="color fall-color-3"></div>
+                        <div className="color fall-color-4"></div>
+                    </div>
+                    <div className="about-color-Container">
+                        <p className="about-color-text">겨울 쿨톤</p>
+                        <div className="color winter-color-1"></div>
+                        <div className="color winter-color-2"></div>
+                        <div className="color winter-color-3"></div>
+                        <div className="color winter-color-4"></div>
+                    </div>
                 </div>
                 <div className="about-text-innerContainer about-3">
                     <div className="about-text-iconContainer">
