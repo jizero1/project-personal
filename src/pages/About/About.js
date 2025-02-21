@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import './About.css';
+import { FaDotCircle } from "react-icons/fa";
 
 const About = () => {
     return (
@@ -8,11 +9,26 @@ const About = () => {
             <div className="about-title">
                 <h2 className="about-title-h2">ABOUT</h2>
             </div>
-            <nav className="about-nav">
-                <li className="about-nav-li">퍼스널컬러의 의미</li>
-                <li className="about-nav-li">퍼스널컬러의 종류</li>
-                <li className="about-nav-li">퍼스널컬러의 활용</li>
-            </nav>
+            <div className="about-text-container">
+            <div className="about-text-innerContainer">
+                <div className="about-text-iconContainer">
+                    <FaDotCircle className="about-text-icon" />
+                </div>
+                <p className="about-text-p-container">퍼스널컬러의 의미</p>
+            </div>
+            <div className="about-text-innerContainer">
+                <div className="about-text-iconContainer">
+                    <FaDotCircle className="about-text-icon"/>
+                </div>
+                <p className="about-text-p-container">퍼스널컬러의 의미</p>
+            </div>
+            <div className="about-text-innerContainer">
+                <div className="about-text-iconContainer">
+                    <FaDotCircle className="about-text-icon"/>
+                </div>
+                <p className="about-text-p-container">퍼스널컬러의 의미</p>
+            </div>
+            </div>
         </div>
     )
 }

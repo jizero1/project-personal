@@ -19,7 +19,7 @@ const MainPage = () => {
                 <div className="mainPage-text-icon-container">
                     <FaAngleDown className="mainPage-text-icon" />
                 </div>
-                <button className="mainPage-text-btn">Personal Test</button>
+                <button onClick={mainTestBtnClick}className="mainPage-text-btn">Personal Test</button>
             </div>
         </div>
     )

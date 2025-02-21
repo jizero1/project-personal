@@ -53,22 +53,23 @@
     font-weight: 700;
     font-size: 25px;
     color: white;
+    letter-spacing: 1px;
 }
 
 .navbar-main-logoText-span {
     /* background-color: black; */
-    background-color: rgb(255, 255, 255,0.3);
+    /* background-color: rgb(255, 255, 255,0.3); */
     /* background-color: rgb(255, 255, 255); */
+    background-color: rgb(206, 215, 255);
     
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 15px;
-    margin-right: 4px;
+    margin-right: 5px;
     font-size: 30px;
-    /* color: #333333; */
-    color: white;
+    color: rgb(23, 18, 114);
     font-family: "Red Hat Display", serif;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .navbar-about,
