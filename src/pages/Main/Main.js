@@ -16,7 +16,9 @@ const MainPage = () => {
             <div className="mainPage-text-container">
                 <h1 className="mainPage-text-h1">What's your Personal Color?</h1>
                 <p className="mainPage-text-p">나를 표현하는 퍼스널 컬러가 궁금하다면, 지금 바로 테스트 해보세요!</p>
-                <FaAngleDown className="mainPage-text-icon"/>
+                <div className="mainPage-text-icon-container">
+                    <FaAngleDown className="mainPage-text-icon" />
+                </div>
                 <button className="mainPage-text-btn">Personal Test</button>
             </div>
         </div>

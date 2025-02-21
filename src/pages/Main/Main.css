@@ -14,7 +14,7 @@
     font-family: "Poppins", serif;
 }
 .mainPage-text-container {
-    width: 1000px;
+    /* width: 1000px; */
     /* background-color: white; */
     text-align: center;
     letter-spacing: 1px;
@@ -32,11 +32,38 @@
 .mainPage-text-p {
     font-size: 22px;
     font-family: "Nanum Gothic", serif;
-    margin-bottom: 40px;
+}
+.mainPage-text-icon-container {
+    width: 100px;
+    height: 90px;
+    /* background-color: blue; */
+    margin-top: 40px;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
 }
 .mainPage-text-icon {
-    font-size: 50px;
-    margin-bottom: 60px;
+    font-size: 40px;
+    /* margin-bottom: 60px; */
+    animation: mainPageIconAni 1.7s  ease-in-out infinite;
+    position: absolute;
+    color: rgb(93, 71, 124);
+
+}
+@keyframes mainPageIconAni {
+    0% {
+        /* transform: translateY(0px); */
+        top: 0px;
+    }
+    50% {
+        /* transform: translateY(50px); */
+        top: 40px;
+    }
+    100% {
+        top: 0px;
+    }
 }
 .mainPage-text-btn {
     width: 250px;
@@ -51,4 +78,29 @@
 .mainPage-text-btn:hover {
     cursor: pointer;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .mainPage-text-container {
+        padding: 30px;
+    }
+    .mainPage-text-h1 {
+        font-size: 50px;
+    }
+    .mainPage-text-p {
+        font-size: 23px;
+        line-height: 35px;
+    }
+    .mainPage-text-icon {
+        font-size: 25px;
+    }
+    .mainPage-text-icon-container {
+        width: 100px;
+        height: 65px;
+    }
+    .mainPage-text-btn {
+        font-size: 20px;
+        width: 170px;
+        height: 50px;
+    }
 }

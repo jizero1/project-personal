@@ -103,7 +103,7 @@
         padding-right: 10px;
     }
     .navbar-main-logoText {
-        font-size: 23px;
+        font-size: 21px;
     }
     .navbar-main-logoText-span {
         font-size: 25px;
@@ -111,12 +111,12 @@
     .navbar-about,
     .navbar-personal {
         margin-right: 0px;
-        font-size: 20px;
+        font-size: 18px;
     }
     .navbar-about {
         width: 80px;
     }
     .navbar-personal {
-        width: 130px;
+        width: 140px;
     }
 }
