@@ -11,132 +11,14 @@ const MainPage = () => {
     }
 
     return (
-        <div className="mainPage common-flex">
-            <div className="main-test-container common-flex">
-                <p className="main-test-text">What's your Personal Color?</p>
-                <p className="main-test-text2">나를 더욱 돋보여줄 나만의 퍼스널 컬러가 궁금하다면, 아래 버튼을 클릭하여 확인 해보세요!</p>
-                <button className="main-test-Btn" onClick={mainTestBtnClick}>Personal Test</button>
-            </div>
+        <div className="mainPage-container">
         </div>
     )
 }
-
-const MainSecondPage = () => {
-
-    const [visible, setVisible] = useState(false);
-    const divRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                setVisible(true);
-            }
-        }, { threshold: 0.5 });
-
-        if (divRef.current) {
-            observer.observe(divRef.current);
-        }
-
-        return () => {
-            if (divRef.current) {
-                observer.unobserve(divRef.current);
-            }
-        }
-    }, [])
-
-    return (
-        <div className="mainSecond common-flex">
-            <div className="mainSecond-text-box">
-                <p className="mainSecond-text">Personal Color</p>
-                <p className="mainSecond-text-explain">계절별로 나뉘는 퍼스널 컬러를 확인 해보세요!</p>
-            </div>
-            <div className="mainSecond-box-container common-flex">
-                <motion.div
-                    ref={divRef}
-                    initial={{ opacity: 0, y: 0 }}
-                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
-                    transition={{ duration: 1 }}
-                    className="mainSecond-box common-flex"
-                >
-                    <div className="spring mainSecond-box-small"></div>
-                    <div className="spring mainSecond-box-small"></div>
-                    <div className="spring mainSecond-box-small"></div>
-                    <div className="spring mainSecond-box-small"></div>
-                    <div className="spring mainSecond-box-small"></div>
-                    <div className="spring mainSecond-box-small"></div>
-
-                    <div className="mainSecond-box-circle common-flex">
-                        <img src="../img/spring.jpg"></img>
-                    </div>
-
-                </motion.div>
-
-                <motion.div
-                    ref={divRef}
-                    initial={{ opacity: 0, y: 0 }}
-                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="mainSecond-box common-flex"
-                >
-                    <div className="summer mainSecond-box-small"></div>
-                    <div className="summer mainSecond-box-small"></div>
-                    <div className="summer mainSecond-box-small"></div>
-                    <div className="summer mainSecond-box-small"></div>
-                    <div className="summer mainSecond-box-small"></div>
-                    <div className="summer mainSecond-box-small"></div>
-
-                    <div className="mainSecond-box-circle common-flex">
-                        <img src="../img/summer.jpg"></img>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    ref={divRef}
-                    initial={{ opacity: 0, y: 0 }}
-                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
-                    transition={{ duration: 1, delay: 1 }}
-                    className="mainSecond-box common-flex"
-                >
-                    <div className="fall mainSecond-box-small"></div>
-                    <div className="fall mainSecond-box-small"></div>
-                    <div className="fall mainSecond-box-small"></div>
-                    <div className="fall mainSecond-box-small"></div>
-                    <div className="fall mainSecond-box-small"></div>
-                    <div className="fall mainSecond-box-small"></div>
-
-                    <div className="mainSecond-box-circle common-flex">
-                        <img src="../img/fall.jpg"></img>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    ref={divRef}
-                    initial={{ opacity: 0, y: 0 }}
-                    animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
-                    transition={{ duration: 1, delay: 1.5 }}
-                    className="mainSecond-box common-flex"
-                >
-                    <div className="winter mainSecond-box-small"></div>
-                    <div className="winter mainSecond-box-small"></div>
-                    <div className="winter mainSecond-box-small"></div>
-                    <div className="winter mainSecond-box-small"></div>
-                    <div className="winter mainSecond-box-small"></div>
-                    <div className="winter mainSecond-box-small"></div>
-
-                    <div className="mainSecond-box-circle common-flex">
-                        <img src="../img/winter.jpg"></img>
-                    </div>
-                </motion.div>
-            </div>
-        </div>
-    )
-}
-
 const Main = () => {
     return (
         <div>
             <MainPage />
-            <MainSecondPage />
         </div>
     )
 }
