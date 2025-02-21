@@ -22,6 +22,7 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    background-color: rgb(255, 255, 255,0.2);
 }
 
 .navbar ul {
@@ -39,7 +40,7 @@
 
 .navbar a {
     text-decoration: none;
-    color: black;
+    color: white;
     cursor: pointer;
     /* font-weight: 600; */
 }
@@ -51,18 +52,21 @@
 .navbar-main-logoText {
     font-weight: 700;
     font-size: 25px;
-    color: #333333;
+    color: white;
 }
 
 .navbar-main-logoText-span {
     /* background-color: black; */
-    background-color: rgb(255, 255, 255,0.5);
+    background-color: rgb(255, 255, 255,0.3);
+    /* background-color: rgb(255, 255, 255); */
+    
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-right: 4px;
     font-size: 30px;
-    color: #333333;
+    /* color: #333333; */
+    color: white;
     font-family: "Red Hat Display", serif;
     font-weight: 800;
 }
@@ -74,7 +78,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    font-size: 23px;
+    font-size: 20px;
 }
 .navbar-about {
     width: 100px;
