@@ -78,10 +78,10 @@
     border-style: none;
     border-radius: 30px;
     background-color: rgb(255, 255, 255,0);
-    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.2);
     color: white;
     font-family: "Poppins", serif;
-    border: solid 3px white;
+    border: solid 4px white;
 }
 .mainPage-text-btn:hover {
     cursor: pointer;
