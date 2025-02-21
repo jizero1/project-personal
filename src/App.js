@@ -27,6 +27,10 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Personal" element={<Personal />} />
         </Routes>
+
+        <footer className="footer-container">
+          <p className="footer-text">© 2025.02 Choi Jiyoung Website. All rights reserved.</p>
+        </footer>
       </div>
     </Router>
   );

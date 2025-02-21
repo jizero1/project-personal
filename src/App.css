@@ -11,7 +11,6 @@
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    /* font-family: "Red Hat Display", serif; */
     font-family: "Poppins", serif;
 }
 
@@ -60,14 +59,15 @@
     /* background-color: black; */
     /* background-color: rgb(255, 255, 255,0.3); */
     /* background-color: rgb(255, 255, 255); */
-    background-color: rgb(206, 215, 255);
+    background-color: rgb(255, 255, 255);
+    /* background-color: white; */
     
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 15px;
     margin-right: 5px;
     font-size: 30px;
-    color: rgb(23, 18, 114);
+    color: #2A2A4E;
     font-family: "Red Hat Display", serif;
     font-weight: 900;
 }
@@ -97,6 +97,20 @@
     background-color: rgb(255, 255, 255,0.5);
 }
 
+.footer-container {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: #2A2A4E;
+}
+.footer-text {
+    color: white;
+    font-size: 17px;
+}
 /* 반응형  */
 @media screen and (max-width: 768px) {
     .navbar {

@@ -1,4 +1,5 @@
 
+
 .mainPage-container {
     width: 100vw;
     height: 100vh;
@@ -71,11 +72,13 @@
 .mainPage-text-btn {
     width: 250px;
     height: 60px;
-    font-size: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 1px;
     border-style: none;
     border-radius: 30px;
     background-color: rgb(255, 255, 255,0);
-    box-shadow: 4px 4px 5px rgb(40, 40, 40,0.1);
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.3);
     color: white;
     font-family: "Poppins", serif;
     border: solid 3px white;
@@ -83,8 +86,10 @@
 .mainPage-text-btn:hover {
     cursor: pointer;
     /* color: white; */
-    border: solid 3px rgb(163, 171, 255);
+    border: solid 4px #2A2A4E;
+    color: #2A2A4E;
 }
+
 
 @media screen and (max-width: 768px) {
     .mainPage-text-container {
