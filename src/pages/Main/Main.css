@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap'); */
 /* -------- 공통으로 사용되는 속성 -------- */
 .common-flex {
     display: flex;
@@ -13,14 +13,13 @@
     height: 100vh;
     flex-direction: column;
     background-image: radial-gradient(circle, #ff7e5f, #c0b7f5);
-    /* 원형 그라디언트 */
 }
 
 .main-test-container {
+    /* common-flex 속성 적용 */
     width: 60%;
     flex-direction: column;
     padding: 20px;
-    /* common-flex속성 적용 */
 }
 
 .main-test-text {
@@ -31,7 +30,6 @@
 }
 
 .main-test-text2 {
-    /* font-family: "Noto Sans KR", serif; */
     font-family: "Nanum Gothic", serif;
     font-weight: 600;
     font-size: 18px;
@@ -52,25 +50,21 @@
 }
 
 .mainSecond {
+    /* common-flex 속성 적용 */
     width: 100vw;
     height: 600px;
     background-color: #2c3e50;
-    /* common-flex 속성 적용 */
     flex-direction: column;
 }
 
 .mainSecond-box-container {
     width: 100vw;
-    /* background-color: lightgrey; */
-
 }
 
 .mainSecond-text-box {
     width: 100%;
-    /* background-color: blue; */
     padding-left: 80px;
     margin-bottom: 40px;
-
 }
 
 .mainSecond-text {
@@ -79,15 +73,16 @@
     color: white;
     margin-bottom: 20px;
 }
+
 .mainSecond-text-explain {
     font-size: 18px;
     color: white;
     font-family: "Nanum Gothic", serif;
 }
+
 .mainSecond-box {
     width: 320px;
     height: 320px;
-    /* background-color: blue; */
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
@@ -98,12 +93,14 @@
     animation: circleAni 2s;
 
 }
+
 .mainSecond-box:hover .mainSecond-box-small {
     opacity: 1;
     width: 50px;
     height: 50px;
     transition: all 2s;
 }
+
 @keyframes circleAni {
     0% {
         transform: rotate(0deg);
@@ -113,9 +110,11 @@
         transform: rotate(360deg);
     }
 }
+
 .mainSecond-box:not(:hover) {
     animation: circleNotAni 2s;
 }
+
 .mainSecond-box:not(:hover) .mainSecond-box-small {
     opacity: 0;
     transition: all 1s;
@@ -135,35 +134,25 @@
     width: 0px;
     height: 0px;
     border-radius: 100%;
-    /* background-color: purple; */
     position: absolute;
     opacity: 0;
 }
 
 .mainSecond-box-small:nth-child(1) {
-    /* bottom: 93%; */
-    /* left: 37%; */
     top: 0%;
-
 }
 
 .mainSecond-box-small:nth-child(2) {
-    /* bottom: 60%; */
-    /* right: 89%; */
     left: 3%;
     top: 25%;
 }
 
 .mainSecond-box-small:nth-child(3) {
-    /* bottom: 60%;
-    left: 89%; */
     right: 3%;
     top: 25%;
 }
 
 .mainSecond-box-small:nth-child(4) {
-    /* top: 66%;
-    right: 86%; */
     left: 6%;
     bottom: 18%;
 }
@@ -273,18 +262,12 @@
     background-color: #4682B4;
 }
 
-/* 아래 원은 자식박스. 부모박스 회전에 영향 안미쳤으면 좋겠음 */
 .mainSecond-box-circle {
+    /* common-flex 속성 적용 */
     width: 200px;
     height: 200px;
     background-color: white;
     border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* position: fixed; */
-    /* position: absolute; */
-    /* transform: unset; */
     transform: none;
     position: relative;
 }
@@ -295,17 +278,7 @@
     border-radius: 100%;
     object-fit: cover;
     position: absolute;
-    z-index: 1;
-    /* 이미지를 원 안에 꽉 차게 맞추기 */
 }
-
-.mainSecond-box-circle p {
-    position:absolute;
-    z-index: 10;
-    font-size: 25px;
-    font-weight: 800;
-}
-
 
 
 

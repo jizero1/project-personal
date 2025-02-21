@@ -4,13 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Red Hat Display", serif;
 }
 
 .app {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    font-family: "Red Hat Display", serif;
 }
 
 .navbar {
@@ -20,11 +20,9 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    background-image: radial-gradient(circle, #ff7e5f, #c0b7f5);
-    /* 원형 그라디언트 */
-    /* border-width: 2px; */
-    /* border-color: whtie; */
-    border-bottom: 2px solid white;
+    /* background-image: radial-gradient(circle, #ff7e5f, #c0b7f5); */
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 .navbar ul {
@@ -41,7 +39,7 @@
 
 .navbar a {
     text-decoration: none;
-    color: white;
+    color: black;
     cursor: pointer;
     font-weight: 600;
 }
@@ -55,14 +53,16 @@
 }
 
 .navbar-main-logoText-span {
-    background-color: white;
+    /* background-color: white; */
+    background-color: rgb(117, 69, 230);
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 10px;
     margin-right: 4px;
     font-size: 30px;
     /* color: linear ~~ */
-    color: rgb(188, 152, 247);
+    /* color: rgb(188, 152, 247); */
+    color: white;
 }
 
 .navbar-about,
@@ -87,7 +87,7 @@
 .navbar-about:hover,
 .navbar-personal:hover {
     /* background-color: rgb(241, 241, 241); */
-    background-color: rgb(187, 168, 199);
+    background-color: rgb(241, 241, 241);
 }
 
 /* 반응형  */

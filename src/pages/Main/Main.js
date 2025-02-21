@@ -26,7 +26,6 @@ const MainSecondPage = () => {
     const [visible, setVisible] = useState(false);
     const divRef = useRef(null);
 
-    // spring이 화면에 보이면 애니메이션 시작
     useEffect(() => {
         const observer = new IntersectionObserver(([entry]) => {
             if (entry.isIntersecting) {
@@ -66,9 +65,8 @@ const MainSecondPage = () => {
                     <div className="spring mainSecond-box-small"></div>
                     <div className="spring mainSecond-box-small"></div>
 
-                    <div className="mainSecond-box-circle">
+                    <div className="mainSecond-box-circle common-flex">
                         <img src="../img/spring.jpg"></img>
-                        {/* <p>Spring</p> */}
                     </div>
 
                 </motion.div>
@@ -87,9 +85,8 @@ const MainSecondPage = () => {
                     <div className="summer mainSecond-box-small"></div>
                     <div className="summer mainSecond-box-small"></div>
 
-                    <div className="mainSecond-box-circle">
-                    <img src="../img/summer.jpg"></img>
-                        {/* <p>summer</p> */}
+                    <div className="mainSecond-box-circle common-flex">
+                        <img src="../img/summer.jpg"></img>
                     </div>
                 </motion.div>
 
@@ -107,9 +104,8 @@ const MainSecondPage = () => {
                     <div className="fall mainSecond-box-small"></div>
                     <div className="fall mainSecond-box-small"></div>
 
-                    <div className="mainSecond-box-circle">
-                    <img src="../img/fall.jpg"></img>
-                        {/* <p>fall</p> */}
+                    <div className="mainSecond-box-circle common-flex">
+                        <img src="../img/fall.jpg"></img>
                     </div>
                 </motion.div>
 
@@ -127,9 +123,8 @@ const MainSecondPage = () => {
                     <div className="winter mainSecond-box-small"></div>
                     <div className="winter mainSecond-box-small"></div>
 
-                    <div className="mainSecond-box-circle">
-                    <img src="../img/winter.jpg"></img>
-                        {/* <p>Winter</p> */}
+                    <div className="mainSecond-box-circle common-flex">
+                        <img src="../img/winter.jpg"></img>
                     </div>
                 </motion.div>
             </div>
