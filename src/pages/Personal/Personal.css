@@ -3,11 +3,42 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, #1a237e 0%, #8041cd 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 50px; */
+    font-family: "Noto Sans KR", serif;
 }
-.personal-title-h2 {
-    width: 100%;
-    /* background-color: white; */
-    /* margin-top: 120px; */
-    font-size: 65px;
-    color: white;
+.personal-test-container {
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 90px;
+}
+.personal-test-question {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+.personal-test {
+    width: 250px;
+    height: 300px;
+    background-color: grey;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.personal-test-option {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+.personal-test-option:hover {
+    
 }
