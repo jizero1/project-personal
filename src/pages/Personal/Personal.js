@@ -21,11 +21,17 @@ const Personal = () => {
             option2: '옵션2',
         },
     ];
+    const [submit, setSubmit] = useState(false);
     const nextTest = () => {
-        setTestNumber(testNumber + 1);
-        if (testNumber === 8) {
-            // 결과알려주는 창으로 이동하는 코드
-        }
+        setTestNumber(prevTestNumber => {
+            const newTestNumber = prevTestNumber + 1;
+            if (newTestNumber >= test.length) {
+                setSubmit(true);
+
+                return prevTestNumber;
+            }
+            return newTestNumber;
+        });
     }
     return (
         <div className="personal-mainContainer">
@@ -38,7 +44,7 @@ const Personal = () => {
                     <button onClick={personalTestStart}>시작하기</button>
                 </div>
             }
-            {testStart &&
+            {testStart && submit === false &&
                 <div className="personal-test-container">
                     <p className="personal-test-question">{test[testNumber].question}</p>
                     <div className="personal-test-option">
@@ -50,6 +56,11 @@ const Personal = () => {
                         </div>
                     </div>
                 </div>
+            }
+            {submit && 
+            <div className="personal-test-container">
+                <p>결과가 나왔습니다.</p>
+            </div>
             }
         </div>
     )
