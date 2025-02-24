@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Personal.css';
 
 const Personal = () => {
@@ -11,18 +11,25 @@ const Personal = () => {
     const [testNumber, setTestNumber] = useState(0);
     const test = [
         {
-            question: '질문 1. 당신에게 잘 어울리는 액세서리 색상은?',
+            question: '질문 1. 당신은 어떤 색상의 액세서리가 더 잘 어울리는 편인가요?',
             option1: '골드',
             option2: '실버',
         },
         {
-            question: '질문 2. ~~~',
-            option1: '옵션1',
-            option2: '옵션2',
+            question: '질문 2. 햇볕에 노출 된 후, 피부 반응은 어떤가요?',
+            option1: '피부가 붉어짐',
+            option2: '피부가 금방 갈색으로 변함',
         },
+        {
+            question: '질문 3. 손등의 핏줄 색상은 어떤 색상을 띄고 있나요?',
+            option1: '파란색 또는 보라색',
+            option2: '녹색 또는 초록색',
+        }
     ];
     const [submit, setSubmit] = useState(false);
-    const nextTest = () => {
+    const [selectedNumber, setSelectedNumber] = useState([]);
+
+    const nextTest = (e) => {
         setTestNumber(prevTestNumber => {
             const newTestNumber = prevTestNumber + 1;
             if (newTestNumber >= test.length) {
@@ -32,7 +39,19 @@ const Personal = () => {
             }
             return newTestNumber;
         });
+        // 사용자가 선택한 옵션을 selectedNumber에 저장함
+        const click = e.target.innerText;
+        const option1 = test[testNumber].option1;
+        if (click === option1) {
+            setSelectedNumber(prevSelected => ([...prevSelected, 1]));
+        } else {
+            setSelectedNumber(prevSelected => ([...prevSelected, 2]));
+        }
     }
+    useEffect(() => {
+        console.log("저장된 숫자"+selectedNumber);
+    },[selectedNumber]);
+    
     return (
         <div className="personal-mainContainer">
             {testStart === false &&
