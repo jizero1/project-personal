@@ -49,9 +49,24 @@ const Personal = () => {
         }
     }
     useEffect(() => {
-        console.log("저장된 숫자"+selectedNumber);
-    },[selectedNumber]);
-    
+        console.log("저장된 숫자" + selectedNumber);
+    }, [selectedNumber]);
+
+    // 최종 질문까지 답변할경우,
+    if (submit === true) {
+        // selectedNumber가 [1,1,1] 이면 웜톤
+        if (JSON.stringify(selectedNumber) === JSON.stringify([1, 2, 2]) ||
+            JSON.stringify(selectedNumber) === JSON.stringify([1, 2, 1]) ||
+            JSON.stringify(selectedNumber) === JSON.stringify([1, 1, 2]) ||
+            JSON.stringify(selectedNumber) === JSON.stringify([2, 2, 2])) {
+            console.log("웜톤 입니다.");
+        } else if (JSON.stringify(selectedNumber) === JSON.stringify([2, 1, 1]) ||
+            JSON.stringify(selectedNumber) === JSON.stringify([2, 1, 2]) ||
+            JSON.stringify(selectedNumber) === JSON.stringify([2, 2, 1]) ||
+            JSON.stringify(selectedNumber) === JSON.stringify([1, 1, 1])) {
+            console.log("쿨톤 입니다.");
+        }
+    }
     return (
         <div className="personal-mainContainer">
             {testStart === false &&
@@ -76,10 +91,10 @@ const Personal = () => {
                     </div>
                 </div>
             }
-            {submit && 
-            <div className="personal-test-container">
-                <p>결과가 나왔습니다.</p>
-            </div>
+            {submit &&
+                <div className="personal-test-container">
+                    <p>결과가 나왔습니다.</p>
+                </div>
             }
         </div>
     )
