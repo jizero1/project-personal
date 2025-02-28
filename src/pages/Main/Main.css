@@ -86,8 +86,10 @@
 .mainPage-text-btn:hover {
     cursor: pointer;
     /* color: white; */
-    border: solid 4px #2A2A4E;
-    color: #2A2A4E;
+    border: solid 4px #fa9d24;
+    color: #fa9d24;
+    scale: 1.1;
+    transition: scale 1s;
 }
 
 
