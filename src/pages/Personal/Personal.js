@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import './Personal.css';
 
 const Personal = () => {
+
 
     // 테스트 시작 상태 저장
     const [testStart, setTestStart] = useState(false);
@@ -213,20 +214,27 @@ const Personal = () => {
     }, [coolTestNumber, coolSelectedNumber]);
 
 
+    const TestStart = () => {
+        return (
+
+                    <div className="personal-test-container">
+                        <p className="personal-start">Personal Test</p>
+                        <p className="personal-start-text">하나의 질문당 2가지의 선택지가 주어집니다.
+                            <br /> 선택지 중 한가지를 선택하면 다음 질문으로 넘어갑니다.
+                            <br /> 총 6개의 질문에 선택을 완료하면, 결과 확인이 가능합니다.
+                        </p>
+                        <button className="personal-start-btn" onClick={personalTestStart}>시작하기</button>
+                    </div>
+
+        )
+    }
 
     return (
         <div className="personal-mainContainer">
-            {/* ----------------- 시작 화면 ----------------- */}
             {testStart === false &&
-                <div className="personal-test-container">
-                    <p className="personal-start">Personal Test</p>
-                    <p className="personal-start-text">하나의 질문당 2가지의 선택지가 주어집니다.
-                        <br /> 선택지 중 한가지를 선택하면 다음 질문으로 넘어갑니다.
-                        <br /> 총 6개의 질문에 선택을 완료하면, 결과 확인이 가능합니다.
-                    </p>
-                    <button className="personal-start-btn" onClick={personalTestStart}>시작하기</button>
-                </div>
+                <TestStart></TestStart>
             }
+
             {/* ----------------- 웜/쿨 구분 테스트 화면 ----------------- */}
             {testStart && submit === false && test1 === true &&
                 <div className="personal-test-container">
