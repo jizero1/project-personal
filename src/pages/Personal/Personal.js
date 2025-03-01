@@ -213,42 +213,51 @@ const Personal = () => {
         }
     }, [coolTestNumber, coolSelectedNumber]);
 
-
+    // --------------------- 퍼스널 컬러 테스트 시작 화면 -------------------
+    // 퍼스널 컬러 테스트 진행방법과 '시작하기' 버튼을 보여줍니다.
+    // '시작하기'버튼을 누르면 테스트가 시작됩니다.
     const TestStart = () => {
         return (
+            <div className="personal-test-container">
+                <p className="personal-start">Personal Test</p>
+                <p className="personal-start-text">하나의 질문당 2가지의 선택지가 주어집니다.
+                    <br /> 선택지 중 한가지를 선택하면 다음 질문으로 넘어갑니다.
+                    <br /> 총 6개의 질문에 선택을 완료하면, 결과 확인이 가능합니다.
+                </p>
+                <button className="personal-start-btn" onClick={personalTestStart}>시작하기</button>
+            </div>
+        )
+    }
 
-                    <div className="personal-test-container">
-                        <p className="personal-start">Personal Test</p>
-                        <p className="personal-start-text">하나의 질문당 2가지의 선택지가 주어집니다.
-                            <br /> 선택지 중 한가지를 선택하면 다음 질문으로 넘어갑니다.
-                            <br /> 총 6개의 질문에 선택을 완료하면, 결과 확인이 가능합니다.
-                        </p>
-                        <button className="personal-start-btn" onClick={personalTestStart}>시작하기</button>
+    // -------------------- 웜/쿨 구분 테스트 화면 -----------------------
+    // 웜/쿨 큰 틀을 구분하기 위한 테스트 화면입니다.
+    const PersonalTest = () => {
+        return (
+            <div className="personal-test-container">
+                <p className="personal-test-question">{test[testNumber].question}</p>
+                <div className="personal-test-option">
+                    <div className="personal-test" onClick={nextTest}>
+                        <p>{test[testNumber].option1}</p>
+                        <img></img>
                     </div>
-
+                    <div className="personal-test" onClick={nextTest}>
+                        <p>{test[testNumber].option2}</p>
+                    </div>
+                </div>
+            </div>
         )
     }
 
     return (
         <div className="personal-mainContainer">
+            {/* ----------------- 퍼스널 컬러 테스트 시작 화면 -----------------  */}
             {testStart === false &&
                 <TestStart></TestStart>
             }
 
             {/* ----------------- 웜/쿨 구분 테스트 화면 ----------------- */}
             {testStart && submit === false && test1 === true &&
-                <div className="personal-test-container">
-                    <p className="personal-test-question">{test[testNumber].question}</p>
-                    <div className="personal-test-option">
-                        <div className="personal-test" onClick={nextTest}>
-                            <p>{test[testNumber].option1}</p>
-                            <img></img>
-                        </div>
-                        <div className="personal-test" onClick={nextTest}>
-                            <p>{test[testNumber].option2}</p>
-                        </div>
-                    </div>
-                </div>
+                <PersonalTest></PersonalTest>
             }
             {/* ----------------- 웜톤 세부 테스트 화면 ----------------- */}
             {testStart && submit === false && test1 === false && warmTest === true &&
