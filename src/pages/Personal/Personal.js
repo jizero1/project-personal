@@ -90,70 +90,96 @@ const Personal = () => {
         },
     ];
 
-    // 웜/쿨 구분 테스트 진행
-    const nextTest = (e) => {
-        // 사용자가 클릭한 option의 텍스트 찾기
+    const handleTestSelection = (e, testName, testNumberState, selectedNumberState, setSelectedNumberState, setTestState, trueOrFalse ) => {
         const click = e.target.innerText;
-
-        // 클릭한 option의 텍스트와 option1의 텍스트를 비교
-        if (click === test[testNumber].option1) {
-            setSelectedNumber(prevSelected => ([...prevSelected, 1]));
-            // 클릭한 option의 텍스트와 option2의 텍스트를 비교
-        } else if (click === test[testNumber].option2) {
-            setSelectedNumber(prevSelected => ([...prevSelected, 2]));
+        if (click === testName[testNumberState].option1) {
+            selectedNumberState(pervSelected => ([...pervSelected,1]));
+        } else if (click === testName[testNumberState].option2) {
+            selectedNumberState(prevSelected => ([...prevSelected,2]));
         }
 
-        // 그다음 선택지로 이동하기 위해 setTestNumber을 +1씩 증가
-        setTestNumber(prevTestNumber => {
+        setSelectedNumberState(prevTestNumber => {
             const newTestNumber = prevTestNumber + 1;
-            // 1번 ~ 3번까지 웜/쿨 구분테스트 완료되면, setTest1을 false로 바꿔서 웜/쿨 구분테스트 창 닫음
-            if (newTestNumber >= test.length) {
-                setTest1(false);
+            if (newTestNumber >= testName.length) {
+                setTestState(trueOrFalse);
                 return prevTestNumber;
             }
             return newTestNumber;
-        });
+        })
     }
+    // 웜/쿨 구분 테스트 진행
+    const nextTest = (e) => {
+        handleTestSelection(e, test, testNumber, setSelectedNumber, setTestNumber, setTest1, false);
+    }
+    // const nextTest = (e) => {
+    //     // 사용자가 클릭한 option의 텍스트 찾기
+    //     const click = e.target.innerText;
+
+    //     // 클릭한 option의 텍스트와 option1의 텍스트를 비교
+    //     if (click === test[testNumber].option1) {
+    //         setSelectedNumber(prevSelected => ([...prevSelected, 1]));
+    //         // 클릭한 option의 텍스트와 option2의 텍스트를 비교
+    //     } else if (click === test[testNumber].option2) {
+    //         setSelectedNumber(prevSelected => ([...prevSelected, 2]));
+    //     }
+
+    //     // 그다음 선택지로 이동하기 위해 setTestNumber을 +1씩 증가
+    //     setTestNumber(prevTestNumber => {
+    //         const newTestNumber = prevTestNumber + 1;
+    //         // 1번 ~ 3번까지 웜/쿨 구분테스트 완료되면, setTest1을 false로 바꿔서 웜/쿨 구분테스트 창 닫음
+    //         if (newTestNumber >= test.length) {
+    //             setTest1(false);
+    //             return prevTestNumber;
+    //         }
+    //         return newTestNumber;
+    //     });
+    // }
 
     // 웜톤의 세부 테스트 진행
     const nextTest2 = (e) => {
-        const click = e.target.innerText;
-
-        if (click === nextWarmTest[warmTestNumber].option1) {
-            setWarmSelectedNumber(prevSelected => ([...prevSelected, 1]));
-        } else if (click === nextWarmTest[warmTestNumber].option2) {
-            setWarmSelectedNumber(prevSelected => ([...prevSelected, 2]));
-        }
-
-        setWarmTestNumber(prevTestNumber => {
-            const newTestNumber = prevTestNumber + 1;
-            if (newTestNumber >= nextWarmTest.length) {
-                setSubmit(true);
-                return prevTestNumber;
-            }
-            return newTestNumber;
-        });
+        handleTestSelection(e, nextWarmTest, warmTestNumber, setWarmSelectedNumber, setWarmTestNumber, setSubmit, true)
     }
+    // const nextTest2 = (e) => {
+    //     const click = e.target.innerText;
+
+    //     if (click === nextWarmTest[warmTestNumber].option1) {
+    //         setWarmSelectedNumber(prevSelected => ([...prevSelected, 1]));
+    //     } else if (click === nextWarmTest[warmTestNumber].option2) {
+    //         setWarmSelectedNumber(prevSelected => ([...prevSelected, 2]));
+    //     }
+
+    //     setWarmTestNumber(prevTestNumber => {
+    //         const newTestNumber = prevTestNumber + 1;
+    //         if (newTestNumber >= nextWarmTest.length) {
+    //             setSubmit(true);
+    //             return prevTestNumber;
+    //         }
+    //         return newTestNumber;
+    //     });
+    // }
 
     // 쿨톤의 세부 테스트 진행
     const nextTest3 = (e) => {
-        const click = e.target.innerText;
-
-        if (click === nextCoolTest[coolTestNumber].option1) {
-            setCoolSelectedNumber(prevSelected => ([...prevSelected, 1]));
-        } else if (click === nextCoolTest[coolTestNumber].option2) {
-            setCoolSelectedNumber(prevSelected => ([...prevSelected, 2]));
-        }
-
-        setCoolTestNumber(prevTestNumber => {
-            const newTestNumber = prevTestNumber + 1;
-            if (newTestNumber >= nextCoolTest.length) {
-                setSubmit(true);
-                return prevTestNumber;
-            }
-            return newTestNumber;
-        });
+        handleTestSelection(e, nextCoolTest, coolTestNumber, setCoolSelectedNumber, setCoolTestNumber, setSubmit, true)
     }
+    // const nextTest3 = (e) => {
+    //     const click = e.target.innerText;
+
+    //     if (click === nextCoolTest[coolTestNumber].option1) {
+    //         setCoolSelectedNumber(prevSelected => ([...prevSelected, 1]));
+    //     } else if (click === nextCoolTest[coolTestNumber].option2) {
+    //         setCoolSelectedNumber(prevSelected => ([...prevSelected, 2]));
+    //     }
+
+    //     setCoolTestNumber(prevTestNumber => {
+    //         const newTestNumber = prevTestNumber + 1;
+    //         if (newTestNumber >= nextCoolTest.length) {
+    //             setSubmit(true);
+    //             return prevTestNumber;
+    //         }
+    //         return newTestNumber;
+    //     });
+    // }
 
 
     // 웜/쿨 구분 테스트시, 사용자가 선택한 option이 뭔지에 따라 웜or쿨 세부테스트로 이동
