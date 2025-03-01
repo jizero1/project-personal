@@ -248,6 +248,155 @@ const Personal = () => {
         )
     }
 
+    //-------------------- 웜톤 세부 테스트 화면 --------------------
+    // 웜톤의 세부 테스트를 위한 테스트 화면입니다.
+    const PersonalWarmTest = () => {
+        return (
+            <div className="personal-test-container">
+                <p className="personal-test-question">{nextWarmTest[warmTestNumber].question}</p>
+                <div className="personal-test-option">
+                    <div className="personal-test" onClick={nextTest2}>
+                        <p>{nextWarmTest[warmTestNumber].option1}</p>
+                    </div>
+                    <div className="personal-test" onClick={nextTest2}>
+                        <p>{nextWarmTest[warmTestNumber].option2}</p>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    //-------------------- 쿨톤 세부 테스트 화면 --------------------
+    // 쿨톤의 세부 테스트를 위한 테스트 화면입니다.
+    const PersonalCoolTest = () => {
+        return (
+            <div className="personal-test-container">
+                <p className="personal-test-question">{nextCoolTest[coolTestNumber].question}</p>
+                <div className="personal-test-option">
+                    <div className="personal-test" onClick={nextTest3}>
+                        <p>{nextCoolTest[coolTestNumber].option1}</p>
+                    </div>
+                    <div className="personal-test" onClick={nextTest3}>
+                        <p>{nextCoolTest[coolTestNumber].option2}</p>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    // ---------------------------- 퍼스널 컬러 테스트 결과화면 ---------------------------
+    // 퍼스널 컬러 테스트가 완료되면 결과를 보여주는 화면입니다.
+    const TestSubmit = () => {
+        return (
+            <div className="submit-container">
+                <div className="personal-test-submit">
+                    <p>당신의 퍼스널 컬러는 <span>{submitWarmCool}</span> 입니다.</p>
+                </div>
+                {submitWarmCool === '봄 웜톤 (Spring Warm Tone)' &&
+                    <div className="personal-detail">
+                        <p className="color-explain">봄웜톤은 밝고 따뜻한 색조가 특징입니다. 피부 톤은 보통 매우 밝고, 황금빛이나 복숭아색이 돌며, 주로 피부가 따뜻하고 생기 있는 느낌을 줍니다. 이 톤의 사람들은 자연스럽게 밝고 따뜻한 느낌을 가집니다.</p>
+                        <div className="color-container">
+                            <p className="color-best">추천하는 컬러 팔레트</p>
+                            <div className="color spring-color-1"></div>
+                            <div className="color spring-color-2"></div>
+                            <div className="color spring-color-3"></div>
+                            <div className="color spring-color-4"></div>
+                        </div>
+                        <p className="color-styleTip">스타일링 팁</p>
+                        <div className="color-styleContainer">
+                            <div className="color-style color-style-1">
+                                <p className="color-style-sort">의류</p>
+                                <p className="color-style-text">코랄, 피치, 아이보리, 베이지, 연한 노랑, 연한 녹색 같은 밝고 따듯한 색조의 의류를 입으면, 자연스럽고 생기있어 보일 수 있습니다.</p>
+                            </div>
+                            <div className="color-style color-style-2">
+                                <p className="color-style-sort">메이크업</p>
+                                <p className="color-style-text">소프트핑크, 베리핑크 같은 핑크 컬러 메이크업을 추천</p>
+                                <p className="color-style-sort">참고하면 좋은 "봄 웜톤" 연예인</p>
+                                <p className="color-style-text">박보영 / 수지 / 아이유 / 이제훈 / 이종석 / 정해인</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                {submitWarmCool === '여름 쿨톤 (Summer Cool Tone)' &&
+                    <div className="personal-detail">
+                        <p className="color-explain">여름쿨톤은 차가운, 부드러운 색조가 특징입니다. 피부 톤은 아주 밝고 차가운 느낌을 주며, 붉거나 핑크색이 감도는 경우가 많습니다. 여름쿨톤은 여름의 시원하고 차가운 느낌을 주는 색상을 잘 소화합니다.</p>
+                        <div className="color-container">
+                            <p className="color-best">추천하는 컬러 팔레트</p>
+                            <div className="color summer-color-1"></div>
+                            <div className="color summer-color-2"></div>
+                            <div className="color summer-color-3"></div>
+                            <div className="color summer-color-4"></div>
+                        </div>
+                        <p className="color-styleTip">스타일링 팁</p>
+                        <div className="color-styleContainer">
+                            <div className="color-style color-style-1">
+                                <p className="color-style-sort">의류</p>
+                                <p className="color-style-text">파스텔 블루, 라벤더, 라이트 핑크, 쿨 블루같은 부드러우면서 차갑고 청량한 색상을 강조하면 더욱 세련된 느낌을 줄 수 있습니다. </p>
+                            </div>
+                            <div className="color-style color-style-2">
+                                <p className="color-style-sort">메이크업</p>
+                                <p className="color-style-text">소프트핑크, 베리핑크 같은 핑크 컬러 메이크업을 추천</p>
+                                <p className="color-style-sort">참고하면 좋은 "여름 쿨톤" 연예인</p>
+                                <p className="color-style-text"> 손예진 / 태연 / 장원영 / 송강 / 조인성 / 송중기</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                {submitWarmCool === '가을 웜톤 (Fall Warm Tone)' &&
+                    <div className="personal-detail">
+                        <p className="color-explain">가을웜톤은 풍성하고 따뜻한 색조가 특징입니다. 피부는 대체로 황금빛 또는 붉은빛이 감도는 톤을 가집니다. 주로 자연에서 볼 수 있는 가을의 색상들이 잘 어울리며, 깊고 따뜻한 느낌을 강조합니다.</p>
+                        <div className="color-container">
+                            <p className="color-best">추천하는 컬러 팔레트</p>
+                            <div className="color fall-color-1"></div>
+                            <div className="color fall-color-2"></div>
+                            <div className="color fall-color-3"></div>
+                            <div className="color fall-color-4"></div>
+                        </div>
+                        <p className="color-styleTip">스타일링 팁</p>
+                        <div className="color-styleContainer">
+                            <div className="color-style color-style-1">
+                                <p className="color-style-sort">의류</p>
+                                <p className="color-style-text">딥 오렌지, 카키, 브라운, 다크그린, 버건디, 카멜과 같은 깊이있는 따듯한 컬러가 피부톤과 잘 어울리며, 브라운과 다크그린, 카멜 컬러는 고급스러우면서도 안정감 있는 느낌을 주고, 버건디는 풍부한 느낌을 더해주어 가을 시즌에 어울리는 완벽한 색상입니다.</p>
+                            </div>
+                            <div className="color-style color-style-2">
+                                <p className="color-style-sort">메이크업</p>
+                                <p className="color-style-text">브릭레드, 다크오렌지, 코랄레드 같은 메이크업 컬러를 추천</p>
+                                <p className="color-style-sort">참고하면 좋은 "가을 웜톤" 연예인</p>
+                                <p className="color-style-text">제니 / 한예슬 / 김유정 / 공유 / 하정우 / 서강준</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                {submitWarmCool === '겨울 쿨톤 (Winter Cool Tone)' &&
+                    <div className="personal-detail">
+                        <p className="color-explain">겨울쿨톤은 강렬하고 차가운 색조가 특징입니다. 피부는 차갑고 밝은 색조가 도는 경우가 많으며, 피부 톤이 매우 밝고 거의 투명한 느낌을 줍니다. 겨울쿨톤은 강한 색상들이 잘 어울립니다.</p>
+                        <div className="color-container">
+                            <p className="color-best">추천하는 컬러 팔레트</p>
+                            <div className="color winter-color-1"></div>
+                            <div className="color winter-color-2"></div>
+                            <div className="color winter-color-3"></div>
+                            <div className="color winter-color-4"></div>
+                        </div>
+                        <p className="color-styleTip">스타일링 팁</p>
+                        <div className="color-styleContainer">
+                            <div className="color-style color-style-1">
+                                <p className="color-style-sort">의류</p>
+                                <p className="color-style-text">다크블루, 블랙, 차가운 레드, 화이트, 차콜그레이, 네이비 블루 컬러 추천.
+                                    차갑고 강렬한 색상은 겨울쿨톤의 차갑고 밝은 피부 톤과 강한 대비를 만들어 피부가 더욱 돋보이게 합니다.
+                                    이 색상들은 피부의 선명함과 고급스러움을 강조하며, 스타일링 시 세련되고 모던한 느낌을 줍니다.</p>
+                            </div>
+                            <div className="color-style color-style-2">
+                                <p className="color-style-sort">메이크업</p>
+                                <p className="color-style-text">강렬한 레드, 체리레드, 플럼 컬러의 메이크업 컬러를 추천</p>
+                                <p className="color-style-sort">참고하면 좋은 "겨울쿨톤" 연예인</p>
+                                <p className="color-style-text">카리나 / 임지연 / 김혜수 / 김수현 / 이수혁 / 우도환</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        )
+    }
     return (
         <div className="personal-mainContainer">
             {/* ----------------- 퍼스널 컬러 테스트 시작 화면 -----------------  */}
@@ -261,141 +410,15 @@ const Personal = () => {
             }
             {/* ----------------- 웜톤 세부 테스트 화면 ----------------- */}
             {testStart && submit === false && test1 === false && warmTest === true &&
-                <div className="personal-test-container">
-                    <p className="personal-test-question">{nextWarmTest[warmTestNumber].question}</p>
-                    <div className="personal-test-option">
-                        <div className="personal-test" onClick={nextTest2}>
-                            <p>{nextWarmTest[warmTestNumber].option1}</p>
-                        </div>
-                        <div className="personal-test" onClick={nextTest2}>
-                            <p>{nextWarmTest[warmTestNumber].option2}</p>
-                        </div>
-                    </div>
-                </div>
+                <PersonalWarmTest></PersonalWarmTest>
             }
             {/* ----------------- 쿨톤 세부 테스트 화면 ----------------- */}
             {testStart && submit === false && test1 === false && coolTest === true &&
-                <div className="personal-test-container">
-                    <p className="personal-test-question">{nextCoolTest[coolTestNumber].question}</p>
-                    <div className="personal-test-option">
-                        <div className="personal-test" onClick={nextTest3}>
-                            <p>{nextCoolTest[coolTestNumber].option1}</p>
-                        </div>
-                        <div className="personal-test" onClick={nextTest3}>
-                            <p>{nextCoolTest[coolTestNumber].option2}</p>
-                        </div>
-                    </div>
-                </div>
+                <PersonalCoolTest></PersonalCoolTest>
             }
             {/* ----------------- 결과 화면 ----------------- */}
             {submit &&
-                <div className="submit-container">
-                    <div className="personal-test-submit">
-                        <p>당신의 퍼스널 컬러는 <span>{submitWarmCool}</span> 입니다.</p>
-                    </div>
-                    {submitWarmCool === '봄 웜톤 (Spring Warm Tone)' &&
-                        <div className="personal-detail">
-                            <p className="color-explain">봄웜톤은 밝고 따뜻한 색조가 특징입니다. 피부 톤은 보통 매우 밝고, 황금빛이나 복숭아색이 돌며, 주로 피부가 따뜻하고 생기 있는 느낌을 줍니다. 이 톤의 사람들은 자연스럽게 밝고 따뜻한 느낌을 가집니다.</p>
-                            <div className="color-container">
-                                <p className="color-best">추천하는 컬러 팔레트</p>
-                                <div className="color spring-color-1"></div>
-                                <div className="color spring-color-2"></div>
-                                <div className="color spring-color-3"></div>
-                                <div className="color spring-color-4"></div>
-                            </div>
-                            <p className="color-styleTip">스타일링 팁</p>
-                            <div className="color-styleContainer">
-                                <div className="color-style color-style-1">
-                                    <p className="color-style-sort">의류</p>
-                                    <p className="color-style-text">코랄, 피치, 아이보리, 베이지, 연한 노랑, 연한 녹색 같은 밝고 따듯한 색조의 의류를 입으면, 자연스럽고 생기있어 보일 수 있습니다.</p>
-                                </div>
-                                <div className="color-style color-style-2">
-                                    <p className="color-style-sort">메이크업</p>
-                                    <p className="color-style-text">소프트핑크, 베리핑크 같은 핑크 컬러 메이크업을 추천</p>
-                                    <p className="color-style-sort">참고하면 좋은 "봄 웜톤" 연예인</p>
-                                    <p className="color-style-text">박보영 / 수지 / 아이유 / 이제훈 / 이종석 / 정해인</p>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                    {submitWarmCool === '여름 쿨톤 (Summer Cool Tone)' &&
-                        <div className="personal-detail">
-                            <p className="color-explain">여름쿨톤은 차가운, 부드러운 색조가 특징입니다. 피부 톤은 아주 밝고 차가운 느낌을 주며, 붉거나 핑크색이 감도는 경우가 많습니다. 여름쿨톤은 여름의 시원하고 차가운 느낌을 주는 색상을 잘 소화합니다.</p>
-                            <div className="color-container">
-                                <p className="color-best">추천하는 컬러 팔레트</p>
-                                <div className="color summer-color-1"></div>
-                                <div className="color summer-color-2"></div>
-                                <div className="color summer-color-3"></div>
-                                <div className="color summer-color-4"></div>
-                            </div>
-                            <p className="color-styleTip">스타일링 팁</p>
-                            <div className="color-styleContainer">
-                                <div className="color-style color-style-1">
-                                    <p className="color-style-sort">의류</p>
-                                    <p className="color-style-text">파스텔 블루, 라벤더, 라이트 핑크, 쿨 블루같은 부드러우면서 차갑고 청량한 색상을 강조하면 더욱 세련된 느낌을 줄 수 있습니다. </p>
-                                </div>
-                                <div className="color-style color-style-2">
-                                    <p className="color-style-sort">메이크업</p>
-                                    <p className="color-style-text">소프트핑크, 베리핑크 같은 핑크 컬러 메이크업을 추천</p>
-                                    <p className="color-style-sort">참고하면 좋은 "여름 쿨톤" 연예인</p>
-                                    <p className="color-style-text"> 손예진 / 태연 / 장원영 / 송강 / 조인성 / 송중기</p>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                    {submitWarmCool === '가을 웜톤 (Fall Warm Tone)' &&
-                        <div className="personal-detail">
-                            <p className="color-explain">가을웜톤은 풍성하고 따뜻한 색조가 특징입니다. 피부는 대체로 황금빛 또는 붉은빛이 감도는 톤을 가집니다. 주로 자연에서 볼 수 있는 가을의 색상들이 잘 어울리며, 깊고 따뜻한 느낌을 강조합니다.</p>
-                            <div className="color-container">
-                                <p className="color-best">추천하는 컬러 팔레트</p>
-                                <div className="color fall-color-1"></div>
-                                <div className="color fall-color-2"></div>
-                                <div className="color fall-color-3"></div>
-                                <div className="color fall-color-4"></div>
-                            </div>
-                            <p className="color-styleTip">스타일링 팁</p>
-                            <div className="color-styleContainer">
-                                <div className="color-style color-style-1">
-                                    <p className="color-style-sort">의류</p>
-                                    <p className="color-style-text">딥 오렌지, 카키, 브라운, 다크그린, 버건디, 카멜과 같은 깊이있는 따듯한 컬러가 피부톤과 잘 어울리며, 브라운과 다크그린, 카멜 컬러는 고급스러우면서도 안정감 있는 느낌을 주고, 버건디는 풍부한 느낌을 더해주어 가을 시즌에 어울리는 완벽한 색상입니다.</p>
-                                </div>
-                                <div className="color-style color-style-2">
-                                    <p className="color-style-sort">메이크업</p>
-                                    <p className="color-style-text">브릭레드, 다크오렌지, 코랄레드 같은 메이크업 컬러를 추천</p>
-                                    <p className="color-style-sort">참고하면 좋은 "가을 웜톤" 연예인</p>
-                                    <p className="color-style-text">제니 / 한예슬 / 김유정 / 공유 / 하정우 / 서강준</p>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                    {submitWarmCool === '겨울 쿨톤 (Winter Cool Tone)' &&
-                        <div className="personal-detail">
-                            <p className="color-explain">겨울쿨톤은 강렬하고 차가운 색조가 특징입니다. 피부는 차갑고 밝은 색조가 도는 경우가 많으며, 피부 톤이 매우 밝고 거의 투명한 느낌을 줍니다. 겨울쿨톤은 강한 색상들이 잘 어울립니다.</p>
-                            <div className="color-container">
-                                <p className="color-best">추천하는 컬러 팔레트</p>
-                                <div className="color winter-color-1"></div>
-                                <div className="color winter-color-2"></div>
-                                <div className="color winter-color-3"></div>
-                                <div className="color winter-color-4"></div>
-                            </div>
-                            <p className="color-styleTip">스타일링 팁</p>
-                            <div className="color-styleContainer">
-                                <div className="color-style color-style-1">
-                                    <p className="color-style-sort">의류</p>
-                                    <p className="color-style-text">다크블루, 블랙, 차가운 레드, 화이트, 차콜그레이, 네이비 블루 컬러 추천.
-                                        차갑고 강렬한 색상은 겨울쿨톤의 차갑고 밝은 피부 톤과 강한 대비를 만들어 피부가 더욱 돋보이게 합니다.
-                                        이 색상들은 피부의 선명함과 고급스러움을 강조하며, 스타일링 시 세련되고 모던한 느낌을 줍니다.</p>
-                                </div>
-                                <div className="color-style color-style-2">
-                                    <p className="color-style-sort">메이크업</p>
-                                    <p className="color-style-text">강렬한 레드, 체리레드, 플럼 컬러의 메이크업 컬러를 추천</p>
-                                    <p className="color-style-sort">참고하면 좋은 "겨울쿨톤" 연예인</p>
-                                    <p className="color-style-text">카리나 / 임지연 / 김혜수 / 김수현 / 이수혁 / 우도환</p>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
+                <TestSubmit></TestSubmit>
             }
         </div>
 
