@@ -110,69 +110,73 @@ const Personal = () => {
         })
     }
     // 웜/쿨 구분 테스트 진행
-    const nextTest = (e) => {
+    const handleWarmCoolTest = (e) => {
         handleTestSelection(e, test, testNumber, setSelectedNumber, setTestNumber, setTest1, false);
     }
     // 웜톤의 세부 테스트 진행
-    const nextTest2 = (e) => {
+    const handleWarmToneTest = (e) => {
         handleTestSelection(e, nextWarmTest, warmTestNumber, setWarmSelectedNumber, setWarmTestNumber, setSubmit, true)
     }
     // 쿨톤의 세부 테스트 진행
-    const nextTest3 = (e) => {
+    const handleCoolToneTest = (e) => {
         handleTestSelection(e, nextCoolTest, coolTestNumber, setCoolSelectedNumber, setCoolTestNumber, setSubmit, true)
     }
 
-    // 웜/쿨 구분 테스트시, 사용자가 선택한 option이 뭔지에 따라 웜or쿨 세부테스트로 이동
+
+    // 웜/쿨 구분 테스트 및 세부 테스트시, 사용자가 선택한 옵션에 따라 테스트 결과를 저장합니다.
+    const testConfig = {
+        patterns1: [
+            [1, 2, 2], [1, 2, 1], [1, 1, 2], [2, 2, 2]
+        ],
+        patterns2: [
+            [2, 1, 2], [2, 1, 1], [2, 2, 1], [1, 1, 1]
+        ]
+    }
+
+    // 웜/쿨 구분 테스트
     useEffect(() => {
+        const isPatterns1 = testConfig.patterns1.some(pattern => JSON.stringify(pattern) === JSON.stringify(selectedNumber));
+        const isPatterns2 = testConfig.patterns2.some(pattern => JSON.stringify(pattern) === JSON.stringify(selectedNumber));
+
         if (testNumber === 2) {
-            if (JSON.stringify(selectedNumber) === JSON.stringify([1, 2, 2]) ||
-                JSON.stringify(selectedNumber) === JSON.stringify([1, 2, 1]) ||
-                JSON.stringify(selectedNumber) === JSON.stringify([1, 1, 2]) ||
-                JSON.stringify(selectedNumber) === JSON.stringify([2, 2, 2])) {
+            if (isPatterns1) {
                 console.log("웜톤 입니다.");
                 setWarmTest(true);
-            } else if (JSON.stringify(selectedNumber) === JSON.stringify([2, 1, 1]) ||
-                JSON.stringify(selectedNumber) === JSON.stringify([2, 1, 2]) ||
-                JSON.stringify(selectedNumber) === JSON.stringify([2, 2, 1]) ||
-                JSON.stringify(selectedNumber) === JSON.stringify([1, 1, 1])) {
+            } else if (isPatterns2) {
                 console.log("쿨톤 입니다.");
                 setCoolTest(true);
             }
         }
     }, [testNumber, selectedNumber]);
 
-    // 웜톤의 세부 테스트시, 사용자가 선택한 option에 따라 결과가 달라짐
+
+    // 웜톤 세부 테스트
     useEffect(() => {
+
+        const isPatterns1 = testConfig.patterns1.some(pattern => JSON.stringify(pattern) === JSON.stringify(warmSelectedNumber));
+        const isPatterns2 = testConfig.patterns2.some(pattern => JSON.stringify(pattern) === JSON.stringify(warmSelectedNumber));
+
         if (warmTestNumber === 2) {
-            if (JSON.stringify(warmSelectedNumber) === JSON.stringify([1, 2, 2]) ||
-                JSON.stringify(warmSelectedNumber) === JSON.stringify([1, 2, 1]) ||
-                JSON.stringify(warmSelectedNumber) === JSON.stringify([1, 1, 2]) ||
-                JSON.stringify(warmSelectedNumber) === JSON.stringify([2, 2, 2])) {
+            if (isPatterns1) {
                 console.log("봄웜톤 입니다.");
                 setSubmitWarmCool("spring");
-            } else if (JSON.stringify(warmSelectedNumber) === JSON.stringify([2, 1, 1]) ||
-                JSON.stringify(warmSelectedNumber) === JSON.stringify([2, 1, 2]) ||
-                JSON.stringify(warmSelectedNumber) === JSON.stringify([2, 2, 1]) ||
-                JSON.stringify(warmSelectedNumber) === JSON.stringify([1, 1, 1])) {
+            } else if (isPatterns2) {
                 console.log("가을웜톤 입니다.");
                 setSubmitWarmCool("fall");
             }
         }
     }, [warmTestNumber, warmSelectedNumber]);
 
-    // 쿨톤의 세부 테스트시, 사용자가 선택한 option에 따라 결과가 달라짐
+    // 쿨톤 세부 테스트
     useEffect(() => {
+        const isPatterns1 = testConfig.patterns1.some(pattern => JSON.stringify(pattern) === JSON.stringify(coolSelectedNumber));
+        const isPatterns2 = testConfig.patterns2.some(pattern => JSON.stringify(pattern) === JSON.stringify(coolSelectedNumber));
+
         if (coolTestNumber === 2) {
-            if (JSON.stringify(coolSelectedNumber) === JSON.stringify([1, 2, 2]) ||
-                JSON.stringify(coolSelectedNumber) === JSON.stringify([1, 2, 1]) ||
-                JSON.stringify(coolSelectedNumber) === JSON.stringify([1, 1, 2]) ||
-                JSON.stringify(coolSelectedNumber) === JSON.stringify([2, 2, 2])) {
+            if (isPatterns1) {
                 console.log("여름쿨톤 입니다.");
                 setSubmitWarmCool("summer");
-            } else if (JSON.stringify(coolSelectedNumber) === JSON.stringify([2, 1, 1]) ||
-                JSON.stringify(coolSelectedNumber) === JSON.stringify([2, 1, 2]) ||
-                JSON.stringify(coolSelectedNumber) === JSON.stringify([2, 2, 1]) ||
-                JSON.stringify(coolSelectedNumber) === JSON.stringify([1, 1, 1])) {
+            } else if (isPatterns2) {
                 console.log("겨울쿨톤 입니다.");
                 setSubmitWarmCool("winter");
             }
@@ -202,11 +206,11 @@ const Personal = () => {
             <div className="personal-test-container">
                 <p className="personal-test-question">{test[testNumber].question}</p>
                 <div className="personal-test-option">
-                    <div className="personal-test" onClick={nextTest}>
+                    <div className="personal-test" onClick={handleWarmCoolTest}>
                         <p>{test[testNumber].option1}</p>
                         <img></img>
                     </div>
-                    <div className="personal-test" onClick={nextTest}>
+                    <div className="personal-test" onClick={handleWarmCoolTest}>
                         <p>{test[testNumber].option2}</p>
                     </div>
                 </div>
@@ -221,10 +225,10 @@ const Personal = () => {
             <div className="personal-test-container">
                 <p className="personal-test-question">{nextWarmTest[warmTestNumber].question}</p>
                 <div className="personal-test-option">
-                    <div className="personal-test" onClick={nextTest2}>
+                    <div className="personal-test" onClick={handleWarmToneTest}>
                         <p>{nextWarmTest[warmTestNumber].option1}</p>
                     </div>
-                    <div className="personal-test" onClick={nextTest2}>
+                    <div className="personal-test" onClick={handleWarmToneTest}>
                         <p>{nextWarmTest[warmTestNumber].option2}</p>
                     </div>
                 </div>
@@ -239,10 +243,10 @@ const Personal = () => {
             <div className="personal-test-container">
                 <p className="personal-test-question">{nextCoolTest[coolTestNumber].question}</p>
                 <div className="personal-test-option">
-                    <div className="personal-test" onClick={nextTest3}>
+                    <div className="personal-test" onClick={handleCoolToneTest}>
                         <p>{nextCoolTest[coolTestNumber].option1}</p>
                     </div>
-                    <div className="personal-test" onClick={nextTest3}>
+                    <div className="personal-test" onClick={handleCoolToneTest}>
                         <p>{nextCoolTest[coolTestNumber].option2}</p>
                     </div>
                 </div>
@@ -299,7 +303,7 @@ const Personal = () => {
                 <div className="personal-test-submit">
                     <p>당신의 퍼스널 컬러는 <span>{toneDetails[tone]?.yourTone}</span> 입니다.</p>
                 </div>
-                {tone === 'spring' &&
+                {toneDetails[tone] &&
                     <div className="personal-detail">
                         <p className="color-explain">{toneDetails[tone]?.explain}</p>
                         <div className="color-container">
