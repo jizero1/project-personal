@@ -90,6 +90,8 @@ const Personal = () => {
         },
     ];
 
+    // 웜/쿨을 구분하고, 웜/쿨의 세부테스트 진행 및 선택옵션 저장 함수입니다.
+    // 클릭된 옵션에 따라 상태를 업데이트하고, 모든 테스트가 끝났을때 지정된 상태(trueOrFalse)를 설정합니다.
     const handleTestSelection = (e, testName, testNumberState, selectedNumberState, setSelectedNumberState, setTestState, trueOrFalse ) => {
         const click = e.target.innerText;
         if (click === testName[testNumberState].option1) {
@@ -139,48 +141,10 @@ const Personal = () => {
     const nextTest2 = (e) => {
         handleTestSelection(e, nextWarmTest, warmTestNumber, setWarmSelectedNumber, setWarmTestNumber, setSubmit, true)
     }
-    // const nextTest2 = (e) => {
-    //     const click = e.target.innerText;
-
-    //     if (click === nextWarmTest[warmTestNumber].option1) {
-    //         setWarmSelectedNumber(prevSelected => ([...prevSelected, 1]));
-    //     } else if (click === nextWarmTest[warmTestNumber].option2) {
-    //         setWarmSelectedNumber(prevSelected => ([...prevSelected, 2]));
-    //     }
-
-    //     setWarmTestNumber(prevTestNumber => {
-    //         const newTestNumber = prevTestNumber + 1;
-    //         if (newTestNumber >= nextWarmTest.length) {
-    //             setSubmit(true);
-    //             return prevTestNumber;
-    //         }
-    //         return newTestNumber;
-    //     });
-    // }
-
     // 쿨톤의 세부 테스트 진행
     const nextTest3 = (e) => {
         handleTestSelection(e, nextCoolTest, coolTestNumber, setCoolSelectedNumber, setCoolTestNumber, setSubmit, true)
     }
-    // const nextTest3 = (e) => {
-    //     const click = e.target.innerText;
-
-    //     if (click === nextCoolTest[coolTestNumber].option1) {
-    //         setCoolSelectedNumber(prevSelected => ([...prevSelected, 1]));
-    //     } else if (click === nextCoolTest[coolTestNumber].option2) {
-    //         setCoolSelectedNumber(prevSelected => ([...prevSelected, 2]));
-    //     }
-
-    //     setCoolTestNumber(prevTestNumber => {
-    //         const newTestNumber = prevTestNumber + 1;
-    //         if (newTestNumber >= nextCoolTest.length) {
-    //             setSubmit(true);
-    //             return prevTestNumber;
-    //         }
-    //         return newTestNumber;
-    //     });
-    // }
-
 
     // 웜/쿨 구분 테스트시, 사용자가 선택한 option이 뭔지에 따라 웜or쿨 세부테스트로 이동
     useEffect(() => {

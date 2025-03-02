@@ -71,9 +71,18 @@
     font-weight: 800;
     border-radius: 20px;
     cursor: pointer;
-    border-style: solid;
+    border-style: none;
+    /* border-style: solid;
     border-color: rgb(180, 168, 218);
+    border-width: 5px; */
+
+}
+.personal-start-btn:hover{
+    border-style: solid;
+    border-color: rgb(170, 153, 234);
     border-width: 5px;
+    scale: 1.1;
+    transition: scale 1s;
 }
 .personal-test-submit {
     width: 80%;
@@ -237,4 +246,5 @@
 }
 .color-style-text {
     margin-bottom: 40px;
+    line-height: 27px;
 }
