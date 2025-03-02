@@ -208,8 +208,8 @@ const Personal = () => {
                 <div className="personal-test-option">
                     <div className="personal-test" onClick={handleWarmCoolTest}>
                         <p>{test[testNumber].option1}</p>
-                        <img></img>
                     </div>
+                    <p className="personal-test-vs">vs</p>
                     <div className="personal-test" onClick={handleWarmCoolTest}>
                         <p>{test[testNumber].option2}</p>
                     </div>
@@ -266,7 +266,7 @@ const Personal = () => {
                 explain: "봄웜톤은 밝고 따뜻한 색조가 특징입니다. 피부 톤은 보통 매우 밝고, 황금빛이나 복숭아색이 돌며, 주로 피부가 따뜻하고 생기 있는 느낌을 줍니다. 이 톤의 사람들은 자연스럽게 밝고 따뜻한 느낌을 가집니다.",
                 colors: ['spring-color1', 'spring-color-2', 'spring-color-3', 'spring-color-4'],
                 clothes: "코랄, 피치, 아이보리, 베이지, 연한 노랑, 연한 녹색 같은 밝고 따듯한 색조의 의류를 입으면, 자연스럽고 생기있어 보일 수 있습니다.",
-                makeup: "소프트핑크, 베리핑크 같은 핑크 컬러 메이크업을 추천", //수정해야함
+                makeup: "코랄핑크, 살몬핑크, 피치핑크 같은 따뜻한 색조의 메이크업을 추천",
                 celebrities: "박보영 / 수지 / 아이유 / 이제훈 / 이종석 / 정해인",
             },
             'summer': {
@@ -275,14 +275,14 @@ const Personal = () => {
                 explain: "여름쿨톤은 차가운, 부드러운 색조가 특징입니다. 피부 톤은 아주 밝고 차가운 느낌을 주며, 붉거나 핑크색이 감도는 경우가 많습니다. 여름쿨톤은 여름의 시원하고 차가운 느낌을 주는 색상을 잘 소화합니다.",
                 colors: ['summer-color1', 'summer-color-2', 'summer-color-3', 'summer-color-4'],
                 clothes: "파스텔 블루, 라벤더, 라이트 핑크, 쿨 블루같은 부드러우면서 차갑고 청량한 색상을 강조하면 더욱 세련된 느낌을 줄 수 있습니다.",
-                makeup: "소프트핑크, 베리핑크 같은 핑크 컬러 메이크업을 추천", // 수정해야함
+                makeup: "소프트핑크, 베리핑크 같은 핑크 컬러 메이크업을 추천", 
                 celebrities: "손예진 / 태연 / 장원영 / 송강 / 조인성 / 송중기",
             },
             'fall': {
                 yourTone: "가을웜톤 (Fall Warm Tone)",
                 yourTone2: "가을 웜톤",
                 explain: "가을웜톤은 풍성하고 따뜻한 색조가 특징입니다. 피부는 대체로 황금빛 또는 붉은빛이 감도는 톤을 가집니다. 주로 자연에서 볼 수 있는 가을의 색상들이 잘 어울리며, 깊고 따뜻한 느낌을 강조합니다.",
-                colors: ['fall-color1', 'fall-color-2', 'fall-color-3', 'fall-color-4'],
+                colors: ['fall-color-1', 'fall-color-2', 'fall-color-3', 'fall-color-4'],
                 clothes: "딥 오렌지, 카키, 브라운, 다크그린, 버건디, 카멜과 같은 깊이있는 따듯한 컬러가 피부톤과 잘 어울리며, 브라운과 다크그린, 카멜 컬러는 고급스러우면서도 안정감 있는 느낌을 주고, 버건디는 풍부한 느낌을 더해주어 가을 시즌에 어울리는 완벽한 색상입니다.",
                 makeup: "브릭레드, 다크오렌지, 코랄레드 같은 메이크업 컬러를 추천",
                 celebrities: "제니 / 한예슬 / 김유정 / 공유 / 하정우 / 서강준",
