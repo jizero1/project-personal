@@ -94,12 +94,13 @@ const Personal = () => {
     // 클릭된 옵션에 따라 상태를 업데이트하고, 모든 테스트가 끝났을때 지정된 상태(trueOrFalse)를 설정합니다.
     const handleTestSelection = (e, testName, testNumberState, selectedNumberState, setSelectedNumberState, setTestState, trueOrFalse) => {
         const click = e.target.innerText;
+        // 선택한 옵션 저장
         if (click === testName[testNumberState].option1) {
             selectedNumberState(pervSelected => ([...pervSelected, 1]));
         } else if (click === testName[testNumberState].option2) {
             selectedNumberState(prevSelected => ([...prevSelected, 2]));
         }
-
+        // 옵션 선택후, 다음 질문지로 이동
         setSelectedNumberState(prevTestNumber => {
             const newTestNumber = prevTestNumber + 1;
             if (newTestNumber >= testName.length) {
@@ -228,6 +229,7 @@ const Personal = () => {
                     <div className="personal-test" onClick={handleWarmToneTest}>
                         <p>{nextWarmTest[warmTestNumber].option1}</p>
                     </div>
+                    <p className="personal-test-vs">vs</p>
                     <div className="personal-test" onClick={handleWarmToneTest}>
                         <p>{nextWarmTest[warmTestNumber].option2}</p>
                     </div>
@@ -246,6 +248,7 @@ const Personal = () => {
                     <div className="personal-test" onClick={handleCoolToneTest}>
                         <p>{nextCoolTest[coolTestNumber].option1}</p>
                     </div>
+                    <p className="personal-test-vs">vs</p>
                     <div className="personal-test" onClick={handleCoolToneTest}>
                         <p>{nextCoolTest[coolTestNumber].option2}</p>
                     </div>
@@ -264,7 +267,7 @@ const Personal = () => {
                 yourTone: "봄웜톤 (Spring Warm Tone)",
                 yourTone2: "봄 웜톤",
                 explain: "봄웜톤은 밝고 따뜻한 색조가 특징입니다. 피부 톤은 보통 매우 밝고, 황금빛이나 복숭아색이 돌며, 주로 피부가 따뜻하고 생기 있는 느낌을 줍니다. 이 톤의 사람들은 자연스럽게 밝고 따뜻한 느낌을 가집니다.",
-                colors: ['spring-color1', 'spring-color-2', 'spring-color-3', 'spring-color-4'],
+                colors: ['spring-color-1', 'spring-color-2', 'spring-color-3', 'spring-color-4'],
                 clothes: "코랄, 피치, 아이보리, 베이지, 연한 노랑, 연한 녹색 같은 밝고 따듯한 색조의 의류를 입으면, 자연스럽고 생기있어 보일 수 있습니다.",
                 makeup: "코랄핑크, 살몬핑크, 피치핑크 같은 따뜻한 색조의 메이크업을 추천",
                 celebrities: "박보영 / 수지 / 아이유 / 이제훈 / 이종석 / 정해인",
@@ -273,7 +276,7 @@ const Personal = () => {
                 yourTone: "여름쿨톤 (Summer Cool Tone)",
                 yourTone2: "여름 쿨톤",
                 explain: "여름쿨톤은 차가운, 부드러운 색조가 특징입니다. 피부 톤은 아주 밝고 차가운 느낌을 주며, 붉거나 핑크색이 감도는 경우가 많습니다. 여름쿨톤은 여름의 시원하고 차가운 느낌을 주는 색상을 잘 소화합니다.",
-                colors: ['summer-color1', 'summer-color-2', 'summer-color-3', 'summer-color-4'],
+                colors: ['summer-color-1', 'summer-color-2', 'summer-color-3', 'summer-color-4'],
                 clothes: "파스텔 블루, 라벤더, 라이트 핑크, 쿨 블루같은 부드러우면서 차갑고 청량한 색상을 강조하면 더욱 세련된 느낌을 줄 수 있습니다.",
                 makeup: "소프트핑크, 베리핑크 같은 핑크 컬러 메이크업을 추천", 
                 celebrities: "손예진 / 태연 / 장원영 / 송강 / 조인성 / 송중기",
@@ -291,7 +294,7 @@ const Personal = () => {
                 yourTone: "겨울쿨톤 (Winter Cool Tone)",
                 yourTone2: "겨울 쿨톤",
                 explain: "겨울쿨톤은 강렬하고 차가운 색조가 특징입니다. 피부는 차갑고 밝은 색조가 도는 경우가 많으며, 피부 톤이 매우 밝고 거의 투명한 느낌을 줍니다. 겨울쿨톤은 강한 색상들이 잘 어울립니다.",
-                colors: ['winter-color1', 'winter-color-2', 'winter-color-3', 'winter-color-4'],
+                colors: ['winter-color-1', 'winter-color-2', 'winter-color-3', 'winter-color-4'],
                 clothes: "다크블루, 블랙, 차가운 레드, 화이트, 차콜그레이, 네이비 블루 컬러 추천. 차갑고 강렬한 색상은 겨울쿨톤의 차갑고 밝은 피부 톤과 강한 대비를 만들어 피부가 더욱 돋보이게 합니다. 이 색상들은 피부의 선명함과 고급스러움을 강조하며, 스타일링 시 세련되고 모던한 느낌을 줍니다.",
                 makeup: "강렬한 레드, 체리레드, 플럼 컬러의 메이크업 컬러를 추천",
                 celebrities: "카리나 / 임지연 / 김혜수 / 김수현 / 이수혁 / 우도환",
