@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Personal.css';
 
 const Personal = () => {
@@ -189,8 +189,8 @@ const Personal = () => {
     // '시작하기'버튼을 누르면 테스트가 시작됩니다.
     const TestStart = () => {
         return (
-            <div className="personal-test-container">
-                <p className="personal-start">Personal Test</p>
+            <div className="personal-test-container common-flex">
+                <p className="personal-start common-flex">Personal Test</p>
                 <p className="personal-start-text">하나의 질문당 2가지의 선택지가 주어집니다.
                     <br /> 선택지 중 한가지를 선택하면 다음 질문으로 넘어갑니다.
                     <br /> 총 6개의 질문에 선택을 완료하면, 결과 확인이 가능합니다.
@@ -204,14 +204,14 @@ const Personal = () => {
     // 웜/쿨 큰 틀을 구분하기 위한 테스트 화면입니다.
     const PersonalTest = () => {
         return (
-            <div className="personal-test-container">
+            <div className="personal-test-container common-flex">
                 <p className="personal-test-question">{test[testNumber].question}</p>
                 <div className="personal-test-option">
-                    <div className="personal-test" onClick={handleWarmCoolTest}>
+                    <div className="personal-test common-flex" onClick={handleWarmCoolTest}>
                         <p>{test[testNumber].option1}</p>
                     </div>
-                    <p className="personal-test-vs">vs</p>
-                    <div className="personal-test" onClick={handleWarmCoolTest}>
+                    <p className="personal-test-vs common-flex">vs</p>
+                    <div className="personal-test common-flex" onClick={handleWarmCoolTest}>
                         <p>{test[testNumber].option2}</p>
                     </div>
                 </div>
@@ -223,14 +223,14 @@ const Personal = () => {
     // 웜톤의 세부 테스트를 위한 테스트 화면입니다.
     const PersonalWarmTest = () => {
         return (
-            <div className="personal-test-container">
+            <div className="personal-test-container common-flex">
                 <p className="personal-test-question">{nextWarmTest[warmTestNumber].question}</p>
                 <div className="personal-test-option">
-                    <div className="personal-test" onClick={handleWarmToneTest}>
+                    <div className="personal-test common-flex" onClick={handleWarmToneTest}>
                         <p>{nextWarmTest[warmTestNumber].option1}</p>
                     </div>
-                    <p className="personal-test-vs">vs</p>
-                    <div className="personal-test" onClick={handleWarmToneTest}>
+                    <p className="personal-test-vs common-flex">vs</p>
+                    <div className="personal-test common-flex" onClick={handleWarmToneTest}>
                         <p>{nextWarmTest[warmTestNumber].option2}</p>
                     </div>
                 </div>
@@ -242,14 +242,14 @@ const Personal = () => {
     // 쿨톤의 세부 테스트를 위한 테스트 화면입니다.
     const PersonalCoolTest = () => {
         return (
-            <div className="personal-test-container">
+            <div className="personal-test-container common-flex">
                 <p className="personal-test-question">{nextCoolTest[coolTestNumber].question}</p>
                 <div className="personal-test-option">
-                    <div className="personal-test" onClick={handleCoolToneTest}>
+                    <div className="personal-test common-flex" onClick={handleCoolToneTest}>
                         <p>{nextCoolTest[coolTestNumber].option1}</p>
                     </div>
-                    <p className="personal-test-vs">vs</p>
-                    <div className="personal-test" onClick={handleCoolToneTest}>
+                    <p className="personal-test-vs common-flex">vs</p>
+                    <div className="personal-test common-flex" onClick={handleCoolToneTest}>
                         <p>{nextCoolTest[coolTestNumber].option2}</p>
                     </div>
                 </div>
@@ -302,21 +302,21 @@ const Personal = () => {
         }
 
         return (
-            <div className="submit-container">
-                <div className="personal-test-submit">
+            <div className="submit-container common-flex">
+                <div className="personal-test-submit common-flex">
                     <p>당신의 퍼스널 컬러는 <span>{toneDetails[tone]?.yourTone}</span> 입니다.</p>
                 </div>
                 {toneDetails[tone] &&
-                    <div className="personal-detail">
-                        <p className="color-explain">{toneDetails[tone]?.explain}</p>
-                        <div className="color-container">
+                    <div className="personal-detail common-flex">
+                        <p className="color-explain common-flex">{toneDetails[tone]?.explain}</p>
+                        <div className="color-container common-flex">
                             <p className="color-best">추천하는 컬러 팔레트</p>
                             {toneDetails[tone]?.colors.map((color, index) => (
                                 <div key={index} className={`color ${color}`}></div>
                             ))}
                         </div>
                         <p className="color-styleTip">스타일링 팁</p>
-                        <div className="color-styleContainer">
+                        <div className="color-styleContainer common-flex">
                             <div className="color-style color-style-1">
                                 <p className="color-style-sort">의류</p>
                                 <p className="color-style-text">{toneDetails[tone]?.clothes}</p>
@@ -335,7 +335,7 @@ const Personal = () => {
         )
     }
     return (
-        <div className="personal-mainContainer">
+        <div className="personal-mainContainer common-flex">
             {/* ----------------- 퍼스널 컬러 테스트 시작 화면 -----------------  */}
             {testStart === false &&
                 <TestStart></TestStart>

@@ -4,11 +4,8 @@ import './App.css';
 import Main from './pages/Main/Main';
 import About from './pages/About/About';
 import Personal from './pages/Personal/Personal';
-import { motion } from "framer-motion";
-// import { FaAngleDown } from "react-icons/fa";
 
 function App() {
-
   return (
     <Router>
       <div className="app">
