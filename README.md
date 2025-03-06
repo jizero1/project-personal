@@ -1,6 +1,6 @@
 ## 프로젝트명 [ 퍼스널컬러 테스트 ]
 <div>
-  <img src="img/img.PNG" width="350"/>
+  <img src="./img/img.PNG" width="350"/>
 </div>
 
 ## 프로젝트 설명
