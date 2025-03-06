@@ -7,7 +7,7 @@
 퍼스널컬러에 맞는 추천 색상과 스타일링 팁 등도 확인 할 수 있습니다.
 
 ## 프로젝트 링크
-[ Personal Test ]()
+[ Personal Test ](https://jizero1.github.io/project-personal/)
 
 ## 개발자
 최지영
